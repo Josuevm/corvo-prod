@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="section-title">
+      <h1>Models</h1>
+    </div>
+  </div>
+  <div class="row top-buffer">
+    <div class="col-xs-12">
+      <div class="col-md-4 col-sm-12 col-xs-12" *ngFor="let model of models; let i = index" (click)="setSelectedModel(i)">
+        
+        <div class="model-container" [class.active]="i == selectedModel">
+          <div class="contain-header">
+            <img src="{{model.image}}" alt="">
+          </div>
+          <div class="contain-footer">
+            <div class="model-name">
+              <h3>{{model.name}}</h3>
+            </div>
+            <div class="contain-footer">
+              <p>{{model.description}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix visible-xs-block"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-model-info [model]="selectedModelName"></app-model-info>

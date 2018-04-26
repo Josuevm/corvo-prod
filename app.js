@@ -30,7 +30,7 @@ app.use('/rims_paths',rims_modelsRouter);
 app.use('/motor_paths',motor_modelsRouter);
 app.use('/interior_paths', interior_modelsRouter);
 app.use('/model_models',model_modelsRouter);
-//mongoose db connection
+//mongoose database connection
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');//si no sirve poner <>
 mongoose.connect('mongodb://root:root@ds241039.mlab.com:41039/corvo_cars', { useMongoClient: true, promiseLibrary: require('bluebird') })

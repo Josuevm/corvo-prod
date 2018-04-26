@@ -13,7 +13,11 @@ import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Ng4TwitterTimelineModule } from 'ng4-twitter-timeline/lib/index';
+import { BuilderComponent } from './car_builder/builder/builder.component';
+import { ColorPickerComponent } from './car_builder/color-picker/color-picker.component';
+import { BuildScreenComponent } from './car_builder/build-screen/build-screen.component';
 import { ModelInfoComponent } from './model-info/model-info.component';
+import { AgmCoreModule } from '@agm/core';
 import { CarDataService } from './car-data.service';
 
 
@@ -26,6 +30,9 @@ import { CarDataService } from './car-data.service';
     ContactComponent,
     HeaderComponent,
     FooterComponent,
+    BuilderComponent,
+    ColorPickerComponent,
+    BuildScreenComponent,
     ModelInfoComponent
    
   ],
@@ -34,7 +41,10 @@ import { CarDataService } from './car-data.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBt-_YitTA4qlfeIkQbaqZOXNiERL6USuA'
+    })
   ],
   providers: [CarDataService],
   bootstrap: [AppComponent]

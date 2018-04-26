@@ -125,14 +125,22 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__header_header_component__ = __webpack_require__("./src/app/header/header.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__footer_footer_component__ = __webpack_require__("./src/app/footer/footer.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ng4_twitter_timeline_lib_index__ = __webpack_require__("./node_modules/ng4-twitter-timeline/lib/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__model_info_model_info_component__ = __webpack_require__("./src/app/model-info/model-info.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__car_data_service__ = __webpack_require__("./src/app/car-data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__car_builder_builder_builder_component__ = __webpack_require__("./src/app/car_builder/builder/builder.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__car_builder_color_picker_color_picker_component__ = __webpack_require__("./src/app/car_builder/color-picker/color-picker.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__car_builder_build_screen_build_screen_component__ = __webpack_require__("./src/app/car_builder/build-screen/build-screen.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__model_info_model_info_component__ = __webpack_require__("./src/app/model-info/model-info.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__agm_core__ = __webpack_require__("./node_modules/@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__car_data_service__ = __webpack_require__("./src/app/car-data.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -161,16 +169,22 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__contact_contact_component__["a" /* ContactComponent */],
                 __WEBPACK_IMPORTED_MODULE_10__header_header_component__["a" /* HeaderComponent */],
                 __WEBPACK_IMPORTED_MODULE_11__footer_footer_component__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__model_info_model_info_component__["a" /* ModelInfoComponent */]
+                __WEBPACK_IMPORTED_MODULE_13__car_builder_builder_builder_component__["a" /* BuilderComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__car_builder_color_picker_color_picker_component__["a" /* ColorPickerComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__car_builder_build_screen_build_screen_component__["a" /* BuildScreenComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__model_info_model_info_component__["a" /* ModelInfoComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_12_ng4_twitter_timeline_lib_index__["b" /* Ng4TwitterTimelineModule */],
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_3__app_routing_module__["a" /* AppRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClientModule */]
+                __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_17__agm_core__["a" /* AgmCoreModule */].forRoot({
+                    apiKey: 'AIzaSyBt-_YitTA4qlfeIkQbaqZOXNiERL6USuA'
+                })
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_14__car_data_service__["a" /* CarDataService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_18__car_data_service__["a" /* CarDataService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -202,12 +216,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var CarDataService = /** @class */ (function () {
     function CarDataService(http) {
         this.http = http;
+        this.model = [
+            {
+                idModel: 1,
+                idMotor: 1,
+                idRims: 1,
+                idColor: 1,
+                idInterior: 1,
+                extras: []
+            }
+        ];
     }
-    CarDataService.prototype.getFeatures = function (model) {
-        return this.http.get('/car_models/features/' + model);
+    CarDataService.prototype.getDefault = function (idModel) {
+    };
+    CarDataService.prototype.getFeatures = function (idModel) {
+        return this.http.get('/car_models/features/' + idModel);
+    };
+    //assing this shit to the model array
+    CarDataService.prototype.getModelImages = function () {
+        return this.http.get('/model_models');
     };
     CarDataService.prototype.getModels = function () {
         return this.http.get('/car_models');
+    };
+    CarDataService.prototype.getRims = function () {
+        return this.http.get('/rimsPaths');
+    };
+    CarDataService.prototype.getMotors = function () {
+        return this.http.get('/motorPaths');
+    };
+    CarDataService.prototype.getInteriors = function () {
+        return this.http.get('/interiorPaths');
+    };
+    CarDataService.prototype.selectModel = function (idModel) {
+        return this.model;
     };
     CarDataService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
@@ -220,17 +262,283 @@ var CarDataService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/car_builder/build-screen/build-screen.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".buildScreen {\r\n    height: 90vh;\r\n}\r\n\r\n.car {\r\n    -ms-flex-line-pack: center;\r\n        align-content: center;\r\n}\r\n\r\n.bodyImage{\r\n\r\n  position: absolute;\r\n  background-size: 100%;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin-top: 18%;\r\n    -webkit-filter: opacity(.5) drop-shadow(0 0 0 white);  filter: opacity(.5) drop-shadow(0 0 0 white);\r\n\r\n}\r\n\r\n.extraImage{\r\n  \r\n  position: absolute;\r\n  background-size: 100%;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin-top: 18%;\r\n}\r\n\r\n.rimsImage{\r\n\r\n  position: absolute;\r\n  background-size: 100%;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin-top: 18%;\r\n}\r\n\r\n@media only screen and (max-width: 992px) {\r\n    .buildScreen {\r\n      height: 52vh;\r\n    }\r\n\r\n    .bodyImage{\r\n      background: url('Imperiale-1.93bdc8ac43dcb6255d74.png') no-repeat center center;\r\n      -webkit-filter: opacity(.5) drop-shadow(0 0 0 white);  filter: opacity(.5) drop-shadow(0 0 0 white);\r\n      position: absolute;\r\n      background-size: 100%;\r\n        width: 80vw;\r\n        height: 60vh;\r\n        margin-top: 5%;\r\n    }\r\n    \r\n    .extraImage{\r\n      background: url('Imperiale-2.3dfd3ccf1ad5832620bc.png') no-repeat center center;\r\n      position: absolute;\r\n      background-size: 100%;\r\n        width: 80vw;\r\n        height: 60vh;\r\n        margin-top: 5%;\r\n    }\r\n    \r\n    .rimsImage{\r\n      background: url('Imperiale-3.29fe786e68d3c86bb3b3.png') no-repeat center center;\r\n      position: absolute;\r\n      background-size: 100%;\r\n        width: 80vw;\r\n        height: 60vh;\r\n        margin-top: 5%;\r\n    }\r\n  \r\n}\r\n\r\n.button {\r\n    position: absolute;\r\n    bottom: 5vh;\r\n    right: 2vw;\r\n    border: 3px solid white;\r\n    font-family: 'Rajdhani', sans-serif;\r\n  }\r\n\r\n.box {\r\n  margin: 1vh;\r\n  padding: 3vh;\r\n  height: 7vh;\r\n  width: 15vw;\r\n  color: #FFF;\r\n  text-align: center;\r\n  -ms-flex-line-pack: center;\r\n      align-content: center;\r\n  transition: 0.5s;\r\n  cursor: pointer;\r\n  -webkit-transition:0.5s;\r\n}\r\n\r\n.box:hover {\r\n  border: 2px solid rgba(0,160,80,0);\r\n  color: #FFF;\r\n  background: radial-gradient( rgba(255,255,255, 0.5), rgba(255,255,255, 0.2), rgba(255,255,255, 0));\r\n}\r\n\r\n.box::before, .box::after {\r\n  width: 100%;\r\n  height:100%;\r\n  z-index: 3;\r\n  content:'';\r\n  position: absolute;\r\n  top:0;\r\n  left:0;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n  -webkit-transform: scale(0);\r\n  transform: scale(0);\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\r\n}\r\n\r\n.foo::before {\r\n  border-bottom: 3px solid #cb9f3d;\r\n  border-left: 3px solid #cb9f3d;\r\n  -webkit-transform-origin: 0 100%;\r\n  transform-origin: 0 100%;\r\n}\r\n\r\n.foo::after {\r\n  border-top: 3px solid #cb9f3d;\r\n  border-right: 3px solid #cb9f3d;\r\n  -webkit-transform-origin: 100% 0%;\r\n  transform-origin: 100% 0%;\r\n}\r\n\r\n.box:hover::after, .box:hover::before {\r\n  -webkit-transform: scale(1);\r\n  transform: scale(1);\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/car_builder/build-screen/build-screen.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row buildScreen\">\r\n\r\n    <div class=\"car\">\r\n        <div class=\"bodyImage\" id=\"bodyImage\" [ngStyle]=\"{backgroundImage:'url(' + getBackground(0) + ')'\r\n        ,backgroundRepeat:'no-repeat',backgroundPosition: 'center center',backgroundSize: '90%'}\">\r\n            \r\n        </div>\r\n\r\n        <!-- Luces, Vidrio, Llantas-->\r\n        <div class=\"extraImage\" id=\"extraImage\" [ngStyle]=\"{backgroundImage:'url(' + getBackground(1) + ')'\r\n        ,backgroundRepeat:'no-repeat',backgroundPosition: 'center center',backgroundSize: '90%'}\">\r\n        </div>\r\n\r\n        <!-- Aros -->\r\n        <div class=\"rimsImage\" id=\"rimsImage\"[ngStyle]=\"{backgroundImage:'url(' + getBackground(2) + ')'\r\n        ,backgroundRepeat:'no-repeat',backgroundPosition: 'center center',backgroundSize: '90%'}\">\r\n        </div>\r\n    </div>\r\n\r\n    <div [ngSwitch]=\"buildOption\">\r\n\r\n        <div *ngSwitchCase=\"'color'\">\r\n            <color-picker (colorChanged)=\"setColor($event)\"></color-picker>\r\n\r\n        </div>\r\n\r\n        <div *ngSwitchCase=\"'motor'\">\r\n            <!--Replace with component to be loaded-->\r\n            <h1>Motor</h1>\r\n        </div>\r\n\r\n        <div *ngSwitchCase=\"'extras'\">\r\n            <!--Replace with component to be loaded-->\r\n            <h1>Extras</h1>\r\n        </div>\r\n\r\n        <div *ngSwitchCase=\"'inside'\">\r\n            <!--Replace with component to be loaded-->\r\n            <h1>Inside</h1>\r\n        </div>\r\n\r\n        <div *ngSwitchCase=\"'rims'\">\r\n            <!--Replace with component to be loaded-->\r\n            <h1>Rims</h1>\r\n        </div>\r\n\r\n        <div *ngSwitchDefault>\r\n            <color-picker (colorChanged)=\"setColor($event)\"></color-picker>\r\n        </div>\r\n    </div>\r\n\r\n    <div class='box foo button' (click)=\"showPreview()\">Preview</div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/car_builder/build-screen/build-screen.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuildScreenComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var BuildScreenComponent = /** @class */ (function () {
+    function BuildScreenComponent(sanitizer) {
+        this.sanitizer = sanitizer;
+        this.car = {
+            modelID: 0,
+            colorID: ''
+        };
+        //esto despues se cambia ya con la logica de las images desde la base 
+        this.carsImages = [
+            [
+                "../../../assets/images/Imparatus/SUV-1.png",
+                "../../../assets/images/Imparatus/SUV-2.png",
+                "../../../assets/images/Imparatus/SUV-3.png"
+            ],
+            [
+                "../../../assets/images/Kubanyi/RAM-1.png",
+                "../../../assets/images/Kubanyi/RAM-2.png",
+                "../../../assets/images/Kubanyi/RAM-3.png"
+            ],
+            [
+                "../../../assets/images/Imperiale/Imperiale-1.png",
+                "../../../assets/images/Imperiale/Imperiale-2.png",
+                "../../../assets/images/Imperiale/Imperiale-3.png"
+            ]
+        ];
+    }
+    BuildScreenComponent.prototype.ngOnInit = function () {
+    };
+    BuildScreenComponent.prototype.ngOnChanges = function () {
+        //cambia el id, de una vez en cadena se cambia lo grafico
+        this.car.modelID = this.model;
+    };
+    //recibe el tipo de imagen que se ocupa, se encarga de devolverla la parte adecuada del carro seleccionado 
+    BuildScreenComponent.prototype.getBackground = function (part) {
+        return this.carsImages[this.car.modelID][part];
+    };
+    BuildScreenComponent.prototype.showPreview = function () {
+        this.car.modelID = this.model;
+        alert('modelID: ' + this.car.modelID + ' colorID: ' + this.car.colorID);
+    };
+    BuildScreenComponent.prototype.setColor = function (color) {
+        this.car.colorID = color;
+        this.changeCarColor();
+    };
+    BuildScreenComponent.prototype.changeCarColor = function () {
+        //images logic goes HERE
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])('buildOption'),
+        __metadata("design:type", Object)
+    ], BuildScreenComponent.prototype, "buildOption", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])('model'),
+        __metadata("design:type", Object)
+    ], BuildScreenComponent.prototype, "model", void 0);
+    BuildScreenComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'build-screen',
+            template: __webpack_require__("./src/app/car_builder/build-screen/build-screen.component.html"),
+            styles: [__webpack_require__("./src/app/car_builder/build-screen/build-screen.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DomSanitizer */]])
+    ], BuildScreenComponent);
+    return BuildScreenComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/car_builder/builder/builder.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".black {\r\n  background-color: black;\r\n}\r\n\r\n.builder {\r\n    height: 90vh;\r\n    width: 100%;\r\n    margin-top: 10%;\r\n    margin-left: 0px;\r\n    border: 1px solid lightslategrey;\r\n    background: url('floor.19cfca70ff919293da00.jpg') no-repeat center center;\r\n    background-size: 100%;\r\n}\r\n\r\n.optionsBar {\r\n    margin: 0px; \r\n    height: 90vh;\r\n    width: 8vw;\r\n    -webkit-box-shadow: 5px 0px 18px #222222;\r\n            box-shadow: 5px 0px 18px #222222;\r\n}\r\n\r\n.active {\r\n    background: radial-gradient( rgba(255,255,255, 0.6), rgba(255,255,255, 0.5), rgba(255,255,255, 0));\r\n    border: 3px solid #cb9f3d;\r\n    color: #cb9f3d;\r\n}\r\n\r\n.button {\r\n    background: radial-gradient( rgba(255,255,255, 0.6), rgba(255,255,255, 0.3), rgba(255,255,255, 0));\r\n    border: 1px solid white;\r\n    font-family: 'Rajdhani', sans-serif;\r\n  }\r\n\r\n.box {\r\n  margin: 1vh;\r\n  padding: 3vh;\r\n  height: 12vh;\r\n  width: 5vw;\r\n  color: #FFF;\r\n  text-align: center;\r\n  -ms-flex-line-pack: center;\r\n      align-content: center;\r\n  transition: 0.5s;\r\n  cursor: pointer;\r\n  -webkit-transition:0.5s;\r\n}\r\n\r\n.box:hover {\r\n  border: 2px solid rgba(0,160,80,0);\r\n  color: #FFF;\r\n  background: radial-gradient( rgba(255,255,255, 0.5), rgba(255,255,255, 0.2), rgba(255,255,255, 0));\r\n}\r\n\r\n.box::before, .box::after {\r\n  width: 100%;\r\n  height:100%;\r\n  z-index: 3;\r\n  content:'';\r\n  position: absolute;\r\n  top:0;\r\n  left:0;\r\n  -webkit-box-sizing: border-box;\r\n          box-sizing: border-box;\r\n  -webkit-transform: scale(0);\r\n  transform: scale(0);\r\n  -webkit-transition: 0.35s;\r\n  transition: 0.35s;\r\n}\r\n\r\n.foo::before {\r\n  border-bottom: 3px solid #cb9f3d;\r\n  border-left: 3px solid #cb9f3d;\r\n  -webkit-transform-origin: 0 100%;\r\n  transform-origin: 0 100%;\r\n}\r\n\r\n.foo::after {\r\n  border-top: 3px solid #cb9f3d;\r\n  border-right: 3px solid #cb9f3d;\r\n  -webkit-transform-origin: 100% 0%;\r\n  transform-origin: 100% 0%;\r\n}\r\n\r\n.box:hover::after, .box:hover::before {\r\n  -webkit-transform: scale(1);\r\n  transform: scale(1);\r\n}\r\n\r\n@media only screen and (max-width: 992px) {\r\n  .builder {\r\n    height: 65vh;\r\n  }\r\n\r\n  .optionsBar {\r\n    height: 12vh;\r\n    width: 90vw;\r\n    -webkit-box-shadow: 5px 10px 18px #000000;\r\n            box-shadow: 5px 10px 18px #000000;\r\n  }\r\n\r\n  .box {\r\n    height: 6vh;\r\n    width: 8vw;\r\n  }\r\n\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/car_builder/builder/builder.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"black\">\r\n    <div class=\"container-fluid builder\">\r\n        <div class=\"row\">\r\n          \r\n          <div class=\"col-xs-12 col-sm-12 col-md-1 optionsBar\">\r\n            <!--OptionsBar-->\r\n            <div *ngFor=\"let option of options\" \r\n                  class=\"col-xs-2 col-sm-2 col-md-12 box foo\" \r\n                  (click)=\"selectedOption = option.name\" \r\n                  [class.active]=\"selectedOption == option.name\">   \r\n                  <i class=\"material-icons\">{{option.icon}}</i>\r\n            </div>\r\n          </div>\r\n      \r\n          <div class=\"col-xs-12 col-sm-12 col-md-11\" >\r\n              <build-screen [buildOption]=\"selectedOption\" [model]=\"selectedModelID\"> </build-screen>\r\n          </div>   \r\n        </div>\r\n      </div>      \r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/car_builder/builder/builder.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuilderComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BuilderComponent = /** @class */ (function () {
+    function BuilderComponent() {
+        this.options = [
+            {
+                name: 'color',
+                icon: 'color_lens'
+            },
+            {
+                name: 'rims',
+                icon: 'brightness_high'
+            },
+            {
+                name: 'inside',
+                icon: 'drive_eta'
+            },
+            {
+                name: 'motor',
+                icon: 'build'
+            },
+            {
+                name: 'extras',
+                icon: 'playlist_add'
+            }
+        ];
+    }
+    BuilderComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])('modelID'),
+        __metadata("design:type", Number)
+    ], BuilderComponent.prototype, "selectedModelID", void 0);
+    BuilderComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'car-builder',
+            template: __webpack_require__("./src/app/car_builder/builder/builder.component.html"),
+            styles: [__webpack_require__("./src/app/car_builder/builder/builder.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], BuilderComponent);
+    return BuilderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/car_builder/color-picker/color-picker.component.css":
+/***/ (function(module, exports) {
+
+module.exports = ".colorPicker {\r\n    position: absolute;\r\n    bottom: 2vh;\r\n}\r\n\r\n.colorPalet {\r\n    margin-left: 30vw;\r\n    height: 10vh;\r\n    width: 30vw;\r\n    border-radius: 20%;\r\n    background: radial-gradient( rgba(255,255,255, 0.7), rgba(255,255,255, 0.4), rgba(255,255,255, 0.1));\r\n}\r\n\r\n.circle {\r\n    height: 6vh;\r\n    width: 6vh;\r\n    border-radius: 50%;\r\n    display: inline-block;\r\n}\r\n\r\n.circle:hover {\r\n    height: 8vh;\r\n    width: 8vh;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/car_builder/color-picker/color-picker.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"colorPicker\">\r\n\r\n    <div class=\"row colorPalet z-depth-2\">\r\n      <div *ngFor=\"let color of colors\"\r\n            class=\"col-xs-1 col-sm-2 circle\" \r\n            [style.background-color]='color.hexcode'\r\n            (click)=\"onColorChange(color.id)\"\r\n           >\r\n      </div>\r\n    </div>\r\n\r\n</div>\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/car_builder/color-picker/color-picker.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ColorPickerComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ColorPickerComponent = /** @class */ (function () {
+    function ColorPickerComponent() {
+        this.colorChanged = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+        this.colors = [
+            { id: 'black', hexcode: '#010101' },
+            { id: 'red', hexcode: '#E50101' },
+            { id: 'white', hexcode: '#FEFEFE' },
+            { id: 'blue', hexcode: '#1301B5' },
+            { id: 'yellow', hexcode: '#F7FE32' }
+        ];
+    }
+    ColorPickerComponent.prototype.onColorChange = function (colorId) {
+        this.selectedColor = colorId;
+        this.colorChanged.emit(this.selectedColor);
+        switch (colorId) {
+            case 'black':
+                document.getElementById("bodyImage").style.filter = "opacity(.5) drop-shadow(0 0 0 black)";
+                console.log("negro");
+                break;
+            case 'red':
+                document.getElementById("bodyImage").style.filter = "opacity(.5) drop-shadow(0 0 0 red)";
+                console.log("red");
+                break;
+            case 'white':
+                document.getElementById("bodyImage").style.filter = "opacity(.5) drop-shadow(0 0 0 white)";
+                console.log("white");
+                break;
+            case 'blue':
+                document.getElementById("bodyImage").style.filter = "opacity(.5) drop-shadow(0 0 0 blue)";
+                console.log("blue");
+                break;
+            case 'yellow':
+                document.getElementById("bodyImage").style.filter = "opacity(.5) drop-shadow(0 0 0 yellow)";
+                console.log("yellow");
+                break;
+        }
+    };
+    ColorPickerComponent.prototype.ngOnInit = function () {
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Output */])(),
+        __metadata("design:type", Object)
+    ], ColorPickerComponent.prototype, "colorChanged", void 0);
+    ColorPickerComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'color-picker',
+            template: __webpack_require__("./src/app/car_builder/color-picker/color-picker.component.html"),
+            styles: [__webpack_require__("./src/app/car_builder/color-picker/color-picker.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ColorPickerComponent);
+    return ColorPickerComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/contact/contact.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n\r\na:hover, a:focus { color: #888; text-decoration: none; }\r\n\r\nstrong { font-weight: bold; }\r\n\r\nimg { max-width: 100%; }\r\n\r\nh1, h2 { line-height: 40px; }\r\n\r\nh3, h4 { line-height: 20px; }\r\n\r\n::-moz-selection { background: #9d426b; color: #fff; text-shadow: none; }\r\n\r\n::selection { background: #9d426b; color: #fff; text-shadow: none; }\r\n\r\n.page-title-container {\r\n    margin: 0 auto;\r\n    padding: 30px 0 35px 0;\r\n    text-align: left;\r\n    -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,.05) inset, 0 -5px 15px 0 rgba(0,0,0,.05) inset;\r\n    box-shadow: 0 5px 15px 0 rgba(0,0,0,.05) inset, 0 -5px 15px 0 rgba(0,0,0,.05) inset;\r\n}\r\n\r\n.page-title-container h1 {\r\n    display: inline;\r\n    margin-left: 10px;\r\n    font-family: 'Josefin Sans', cursive;\r\n    font-size: 24px;\r\n    color: #5d5d5d;\r\n    font-weight: bold;\r\n    text-shadow: 0 1px 0 rgba(255, 255, 255, .7);\r\n    vertical-align: middle;\r\n}\r\n\r\n.page-title-container p {\r\n    display: inline;\r\n    font-family: 'Josefin Sans', 'sans-serif';\r\n    margin-left: 5px;\r\n    font-size: 14px;\r\n    font-style: italic;\r\n    vertical-align: middle;\r\n}\r\n\r\n.page-title-container i {\r\n    font-size: 46px;\r\n    color: #ccc;\r\n    vertical-align: middle;\r\n}\r\n\r\n/* Contact Form */\r\n\r\n.contact-us-container {\r\n    margin-top: 20px;\r\n    padding-bottom: 50px;\r\n    text-align: left;\r\n    font-family: 'Josefine Sans', sans-serif;\r\n    color: #888;\r\n    font-size: 12px;\r\n}\r\n\r\n.contact-us-container h3 {\r\n    margin-top: 25px;\r\n    font-family: 'Josefine Sans', sans-serif;\r\n    font-size: 16px;\r\n    color: #5d5d5d;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    text-shadow: 0 1px 0 rgba(255,255,255,.7);\r\n}\r\n\r\n.contact-us-container p {\r\n    line-height: 28px;\r\n    font-size: 13px;\r\n}\r\n\r\n.contact-form {\r\n    padding-top: 25px;\r\n    padding-bottom: 30px;\r\n}\r\n\r\n.contact-form form {\r\n    margin-top: 25px;\r\n}\r\n\r\n.contact-form form .form-group {\r\n\tmargin-bottom: 20px;\r\n}\r\n\r\n.contact-form input[type=\"text\"] { width: 95%; height: 34px; }\r\n\r\n.contact-form textarea { width: 95%; height: 170px; padding-top: 6px; padding-bottom: 6px; }\r\n\r\n.contact-form label { font-size: 17px; font-weight: 400; }\r\n\r\n.contact-form label .error-label { font-style: italic }\r\n\r\n.contact-form button { margin-top: 5px; padding: 0 45px; }\r\n\r\ninput[type=\"text\"], \r\ntextarea {\r\n    margin: 0;\r\n    padding: 0 6px;\r\n    vertical-align: middle;\r\n    background: none;\r\n    border: 1px solid #ddd;\r\n    font-family: 'Josefine Sans', sans-serif;\r\n    font-size: 13px;\r\n    font-weight: 400;\r\n    color: #888;\r\n    font-style: italic; border-radius: 0; -webkit-box-shadow: none; box-shadow: none; -webkit-transition: all .3s; transition: all .3s;\r\n}\r\n\r\ninput[type=\"text\"]:focus, \r\ntextarea:focus {\r\n\toutline: 0;\r\n    border: 1px solid #bbb; -webkit-box-shadow: none; box-shadow: none;\r\n}\r\n\r\ninput[type=\"text\"]:-moz-placeholder, textarea:-moz-placeholder { color: #ccc; }\r\n\r\ninput[type=\"text\"]:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #ccc; }\r\n\r\ninput[type=\"text\"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #ccc; }\r\n\r\nbutton.btn {\r\n\theight: 30px;\r\n    margin: 0;\r\n    padding: 0 20px;\r\n    vertical-align: middle;\r\n    background: #9d426b;\r\n    border: 0;\r\n    font-family: 'Josefine Sans', sans-serif;\r\n    font-size: 13px;\r\n    font-weight: 400;\r\n    line-height: 30px;\r\n    color: #fff;\r\n    text-shadow: none; border-radius: 0;\r\n    -webkit-box-shadow: 0 1px 25px 0 rgba(0,0,0,.05) inset, 0 -1px 25px 0 rgba(0,0,0,.05) inset;\r\n    box-shadow: 0 1px 25px 0 rgba(0,0,0,.05) inset, 0 -1px 25px 0 rgba(0,0,0,.05) inset; -webkit-transition: all .3s; transition: all .3s;\r\n}\r\n\r\nbutton.btn:hover {\r\n\tbackground: #5d5d5d;\r\n    border: 0;\r\n    color: #fff; -webkit-box-shadow: none; box-shadow: none;\r\n}\r\n\r\nbutton.btn:active {\r\n\toutline: 0;\r\n    background: #5d5d5d;\r\n    border: 0;\r\n    color: #fff;\r\n    -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,.15) inset, 0 -1px 25px 0 rgba(0,0,0,.05) inset;\r\n    box-shadow: 0 5px 10px 0 rgba(0,0,0,.15) inset, 0 -1px 25px 0 rgba(0,0,0,.05) inset;\r\n}\r\n\r\nbutton.btn:focus {\r\n\toutline: 0;\r\n    background: #5d5d5d;\r\n    border: 0;\r\n    color: #fff;\r\n}\r\n\r\n.btn:active:focus, .btn.active:focus {\r\n\toutline: 0;\r\n    background: #5d5d5d;\r\n    border: 0;\r\n    color: #fff;\r\n}\r\n\r\n/***** Google map *****/\r\n\r\n.contact-address {\r\n\tpadding-bottom: 15px;\r\n}\r\n\r\n.contact-address .map {\r\n    margin: 20px 0 40px 0;\r\n    height: 300px;\r\n    border: 5px solid #f8f8f8;\r\n}\r\n\r\n\r\n"
+module.exports = "\r\n\r\na:hover, a:focus { color: #888; text-decoration: none; }\r\n\r\nstrong { font-weight: bold; }\r\n\r\nimg { max-width: 100%; }\r\n\r\nh1, h2 { line-height: 40px; }\r\n\r\nh3, h4 { line-height: 20px; }\r\n\r\n::-moz-selection {    background: #fcbd2b; color: #fff; text-shadow: none; }\r\n\r\n::selection {     background: #fcbd2b; color: #fff; text-shadow: none; }\r\n\r\n.page-title-container {\r\n    margin: 0 auto;\r\n    padding: 30px 0 35px 0;\r\n    text-align: left;\r\n    -webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,.05) inset, 0 -5px 15px 0 rgba(0,0,0,.05) inset;\r\n    box-shadow: 0 5px 15px 0 rgba(0,0,0,.05) inset, 0 -5px 15px 0 rgba(0,0,0,.05) inset;\r\n}\r\n\r\n.page-title-container h1 {\r\n    display: inline;\r\n    margin-left: 10px;\r\n    font-family: 'Rajdhani', sans-serif;\r\n    font-size: 30px;\r\n    color: #5d5d5d;\r\n    font-weight: bold;\r\n    text-shadow: 0 1px 0 rgba(255, 255, 255, .7);\r\n    vertical-align: middle;\r\n}\r\n\r\n.page-title-container p {\r\n    display: inline;\r\n    font-family: 'Rajdhani', 'sans-serif';\r\n    margin-left: 5px;\r\n    font-size: 18px;\r\n    font-style: italic;\r\n    vertical-align: middle;\r\n}\r\n\r\n.page-title-container i {\r\n    font-size: 46px;\r\n    color: #ccc;\r\n    vertical-align: middle;\r\n}\r\n\r\n/* Contact Form */\r\n\r\n.contact-us-container {\r\n    margin-top: 20px;\r\n    padding-bottom: 50px;\r\n    text-align: left;\r\n    font-family: 'Rajdhani', sans-serif;\r\n    color: #888;\r\n    font-size: 12px;\r\n}\r\n\r\n.contact-us-container h3 {\r\n    margin-top: 25px;\r\n    font-family: 'Rajdhani', sans-serif;\r\n    font-size: 18px;\r\n    color: #5d5d5d;\r\n    font-weight: bold;\r\n    text-transform: uppercase;\r\n    text-shadow: 0 1px 0 rgba(255,255,255,.7);\r\n}\r\n\r\n.contact-us-container p {\r\n    line-height: 28px;\r\n    font-size: 17px;\r\n}\r\n\r\n.contact-form {\r\n    padding-top: 25px;\r\n    padding-bottom: 30px;\r\n}\r\n\r\n.contact-form form {\r\n    margin-top: 25px;\r\n}\r\n\r\n.contact-form form .form-group {\r\n\tmargin-bottom: 20px;\r\n}\r\n\r\n.contact-form input[type=\"text\"] { width: 95%; height: 34px; }\r\n\r\n.contact-form textarea { width: 95%; height: 170px; padding-top: 6px; padding-bottom: 6px; }\r\n\r\n.contact-form label { font-size: 20px; font-weight: 400; }\r\n\r\n.contact-form label .error-label { font-style: italic }\r\n\r\n.contact-form button { margin-top: 5px; padding: 0 45px; }\r\n\r\ninput[type=\"text\"], \r\ntextarea {\r\n    margin: 0;\r\n    padding: 0 6px;\r\n    vertical-align: middle;\r\n    background: none;\r\n    border: 1px solid #ddd;\r\n    font-family: 'Rajdhani', sans-serif;\r\n    font-size: 13px;\r\n    font-weight: 400;\r\n    color: #888;\r\n    font-style: italic; border-radius: 0; -webkit-box-shadow: none; box-shadow: none; -webkit-transition: all .3s; transition: all .3s;\r\n}\r\n\r\ninput[type=\"text\"]:focus, \r\ntextarea:focus {\r\n\toutline: 0;\r\n    border: 1px solid #bbb; -webkit-box-shadow: none; box-shadow: none;\r\n}\r\n\r\ninput[type=\"text\"]:-moz-placeholder, textarea:-moz-placeholder { color: #ccc; }\r\n\r\ninput[type=\"text\"]:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #ccc; }\r\n\r\ninput[type=\"text\"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #ccc; }\r\n\r\nbutton.btn {\r\n    \r\n\theight: 30px;\r\n    margin: 0;\r\n    padding: 0 20px;\r\n    vertical-align: middle;\r\n    background: #9d426b;\r\n    font-family: 'Rajdhani', sans-serif;\r\n    font-size: 13px;\r\n    font-weight: 400;\r\n    line-height: 30px;\r\n    text-shadow: none;\r\n    -webkit-box-shadow: 0 1px 25px 0 rgba(0,0,0,.05) inset, 0 -1px 25px 0 rgba(0,0,0,.05) inset;\r\n    box-shadow: 0 1px 25px 0 rgba(0,0,0,.05) inset, 0 -1px 25px 0 rgba(0,0,0,.05) inset; -webkit-transition: all .3s; transition: all .3s;\r\n}\r\n\r\ninput.btn{\r\n    border: 2px solid rgb(93, 93, 93);\r\n    color: rgb(93, 93, 93);\r\n    font-family: 'Rajdhani', sans-serif;\r\n    font-size: 20px;\r\n    background-color: white;\r\n}\r\n\r\nbutton.btn:hover {\r\n\tbackground: #5d5d5d;\r\n    border: 0;\r\n    color: #fff; -webkit-box-shadow: none; box-shadow: none;\r\n}\r\n\r\nbutton.btn:active {\r\n\toutline: 0;\r\n    background: #5d5d5d;\r\n    border: 0;\r\n    color: #fff;\r\n    -webkit-box-shadow: 0 5px 10px 0 rgba(0,0,0,.15) inset, 0 -1px 25px 0 rgba(0,0,0,.05) inset;\r\n    box-shadow: 0 5px 10px 0 rgba(0,0,0,.15) inset, 0 -1px 25px 0 rgba(0,0,0,.05) inset;\r\n}\r\n\r\nbutton.btn:focus {\r\n\toutline: 0;\r\n    background: #5d5d5d;\r\n    border: 0;\r\n    color: #fff;\r\n}\r\n\r\n.btn:active:focus, .btn.active:focus {\r\n\toutline: 0;\r\n    background: #5d5d5d;\r\n    border: 0;\r\n    color: #fff;\r\n}\r\n\r\n/***** Google map *****/\r\n\r\n.contact-address {\r\n\tpadding-bottom: 15px;\r\n}\r\n\r\n.contact-address .map {\r\n    margin: 20px 0 40px 0;\r\n    height: 300px;\r\n    border: 5px solid #f8f8f8;\r\n    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}\r\n\r\ni.fa.fa-facebook, i.fa.fa-twitter, i.fa.fa-instagram{\r\n    border-radius: 100%;\r\n    font-size: 24px;\r\n    height: 40px;\r\n    line-height: 40px;\r\n    margin: 5px;\r\n    text-align: center;\r\n    width: 50px;\r\n    text-align: center;\r\n    text-decoration: none;\r\n    }\r\n\r\n.fa:hover {\r\n      opacity: 0.7;\r\n  }\r\n\r\n.fa-facebook {\r\n    background: #3B5998;\r\n    color: white;\r\n  }\r\n\r\n.fa-twitter {\r\n    background: #55ACEE;\r\n    color: white;\r\n  }\r\n\r\n.fa-instagram {\r\n    background: #125688;\r\n    color: white;\r\n  }\r\n\r\nagm-map {\r\n    height: 300px;\r\n  }\r\n\r\n.alert-message>p{\r\n      font-size: 22px;\r\n  }\r\n\r\n.alert-message{\r\n      cursor: pointer;\r\n  }\r\n"
 
 /***/ }),
 
 /***/ "./src/app/contact/contact.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Open+Sans:400italic,400\">\r\n<link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Droid+Sans\">\r\n<link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Lobster\">\r\n\r\n<app-nav-bar></app-nav-bar>\r\n<!--Page title -->\r\n<div class=\"page-title-container\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-12 wow fadeIn\">\r\n        <i class=\"fa fa-envelope\"></i>\r\n        <h1>Contact Us /</h1>\r\n        <p>Here is how you can contact us</p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!-- Contact Form -->\r\n<div class=\"contact-us-container\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-7 contact-form\">\r\n        <form >\r\n          <div class=\"form-group\">\r\n            <label for=\"contact-name\">Name</label>\r\n            <input type=\"text\" name=\"name\" placeholder=\"Enter your name...\" \r\n            class=\"contact-name\" id=\"contact-name\" [(ngModel)]=\"message.name\">\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"contact-email\">Email</label>\r\n            <input type=\"text\" name=\"email\" placeholder=\"Enter your email...\" \r\n            class=\"contact-email\" id=\"contact-email\" [(ngModel)]=\"message.email\">\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"contact-message\">Message</label>\r\n            <textarea name=\"message\" placeholder=\"Your message...\" \r\n            class=\"contact-message\" id=\"contact-message\" [(ngModel)]=\"message.body\"></textarea>\r\n          </div>\r\n          <input type=\"submit\" class=\"btn\" (click)=\"sendMessage()\" value=\"Send\">\r\n        </form>\r\n      </div>\r\n      <div class=\"col-sm-5 contact-address\">\r\n        <h3>We Are Here</h3>\r\n        <div class=\"map\"></div>\r\n        <h3>Social Media</h3>\r\n          <a href=\"http://www.facebook.com\">Facebook</a>\r\n          <a href=\"\">Twitter</a>\r\n          <a href=\"\">Instagram</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "\r\n<link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Open+Sans:400italic,400\">\r\n<link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Droid+Sans\">\r\n<link rel=\"stylesheet\" href=\"http://fonts.googleapis.com/css?family=Lobster\">\r\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n<app-nav-bar></app-nav-bar>\r\n<!--Page title -->\r\n<div class=\"page-title-container\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-12 wow fadeIn\">\r\n        <i class=\"fa fa-envelope\"></i>\r\n        <h1>Contact Us /</h1>\r\n        <p>Here is how you can contact us</p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!-- Contact Form -->\r\n<div class=\"contact-us-container\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-sm-7 contact-form\">\r\n        <form >\r\n          <div class=\"form-group\">\r\n            <label for=\"contact-name\">Name</label>\r\n            <input type=\"text\" name=\"name\" placeholder=\"Enter your name...\" \r\n            class=\"contact-name\" id=\"contact-name\" [(ngModel)]=\"message.name\">\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"contact-email\">Email</label>\r\n            <input type=\"text\" name=\"email\" placeholder=\"Enter your email...\" \r\n            class=\"contact-email\" id=\"contact-email\" [(ngModel)]=\"message.email\">\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"contact-message\">Message</label>\r\n            <textarea name=\"message\" placeholder=\"Your message...\" \r\n            class=\"contact-message\" id=\"contact-message\" [(ngModel)]=\"message.body\"></textarea>\r\n          </div>\r\n          <input type=\"submit\" class=\"btn\" (click)=\"sendMessage()\" value=\"Send\">\r\n        </form>\r\n        <div *ngIf=\"showMessage\">\r\n          <div class=\"alert-message top-buffer\" (click)=\"hideAlert()\">\r\n            <p>{{alert}}</p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-sm-5 contact-address\">\r\n        <h3>We Are Here</h3>\r\n        <div class=\"map\">\r\n          <agm-map [latitude]=\"lat\" [longitude]=\"lng\">\r\n            <agm-marker [latitude]=\"lat\" [longitude]=\"lng\"></agm-marker>\r\n          </agm-map>\r\n        </div>\r\n        <div class=\"col-sm-7\">\r\n          <h3>Social Media</h3>\r\n         \r\n          <ul class=\"social-icons icon-circle icon-zoom list-unstyled list-inline\"> \r\n            <li><a href=\"https://www.facebook.com/Corvo-Cars-178109046180834\" target=\"_blank\"><i class=\"fa fa-facebook\"></i></a> </li> \r\n            <li><a href=\"https://twitter.com/Corvus_imperio\" target=\"_blank\"><i class=\"fa fa-twitter\"></i></a> </li> \r\n            <li><a href=\"https://www.instagram.com/corvo_cars/\" target=\"_blank\"><i class=\"fa fa-instagram\"></i></a> </li>   \r\n          </ul>\r\n\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n          <h3>Phone Number</h3>\r\n          <p>+506 84538943</p>\r\n        </div>\r\n        \r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -252,17 +560,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var ContactComponent = /** @class */ (function () {
     function ContactComponent() {
+        this.lat = 10.04261876;
+        this.lng = -84.30005225;
         this.message = {
             name: "",
             email: "",
             body: ""
         };
+        this.showMessage = false;
+        this.alert = "";
     }
     ContactComponent.prototype.ngOnInit = function () {
         this.changeNavStyle();
     };
     ContactComponent.prototype.sendMessage = function () {
-        alert("Name:" + this.message.name + ", Email: " + this.message.email + " ,MEssage:" + this.message.body);
+        if (this.message.name.length !== 0 ||
+            this.message.email.length !== 0 ||
+            this.message.body.length !== 0) {
+            this.alert = "Thank you for contacting us!";
+            this.showMessage = true;
+        }
+        else {
+            this.alert = "You need to fill all the information";
+            this.showMessage = true;
+        }
+    };
+    ContactComponent.prototype.hideAlert = function () {
+        this.showMessage = false;
     };
     ContactComponent.prototype.changeNavStyle = function () {
         document.getElementById("navbar").style.background = "#222";
@@ -349,7 +673,7 @@ module.exports = "body {\r\n    font-family: 'Roboto', sans-serif;\r\n    font-s
 /***/ "./src/app/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"top-content-container\">\r\n    <div class=\"container\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-12 text wow fadeInLeft\">\r\n          <h1>Corvo Imperiale</h1>\r\n          <div class=\"description\">\r\n            <p class=\"medium-paragraph\">\r\n              Our newest car!\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>"
+module.exports = "<div class=\"top-content-container\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-sm-12 text wow fadeInLeft\">\n          <h1>Corvo Imperiale</h1>\n          <div class=\"description\">\n            <p class=\"medium-paragraph\">\n              Our newest car!\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -399,7 +723,7 @@ module.exports = "body {\r\n    font-family: 'Roboto', sans-serif;\r\n    font-s
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"top-content\">\r\n    <app-nav-bar></app-nav-bar>\r\n    <span class=\"helper\"></span>\r\n    <app-header></app-header>\r\n</div>\r\n<app-models></app-models>\r\n\r\n\r\n"
+module.exports = "<div class=\"top-content\">\r\n    <app-nav-bar></app-nav-bar>\r\n    <span class=\"helper\"></span>\r\n    <app-header></app-header>\r\n</div>\r\n<app-models (modelIDChanged)='onModelIDChanged($event)'></app-models>\r\n<car-builder [modelID]='selectedModelID' ></car-builder>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -421,7 +745,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var HomeComponent = /** @class */ (function () {
     function HomeComponent() {
+        this.selectedModelID = 1;
     }
+    HomeComponent.prototype.onModelIDChanged = function (modelID) {
+        this.selectedModelID = modelID;
+    };
     HomeComponent.prototype.ngOnInit = function () {
     };
     HomeComponent = __decorate([
@@ -552,7 +880,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ModelsComponent = /** @class */ (function () {
     function ModelsComponent(carData) {
         this.carData = carData;
-        this.selectedModel = 1;
+        this.modelIDChanged = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+        this.selectedModel = 2;
         this.selectedModelName = "";
     }
     ModelsComponent.prototype.ngOnInit = function () {
@@ -571,7 +900,12 @@ var ModelsComponent = /** @class */ (function () {
     ModelsComponent.prototype.setSelectedModel = function (index) {
         this.selectedModel = index;
         this.selectedModelName = this.models[index].name;
+        this.modelIDChanged.emit(index);
     };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Output */])('modelIDChanged'),
+        __metadata("design:type", Object)
+    ], ModelsComponent.prototype, "modelIDChanged", void 0);
     ModelsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-models',

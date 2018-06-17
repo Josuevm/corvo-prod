@@ -6,43 +6,71 @@ import { getDefaultService } from 'selenium-webdriver/opera';
 
 @Injectable()
 export class CarDataService {
-model = [
-  {
-    idModel:1,
-    idMotor:1,
-    idRims:1,
-    idColor:1,
-    idInterior:1,
-    extras:[] 
-  }
-]
-getDefault(idModel){
 
-}
-  constructor(private http: HttpClient) { }
+  private rims: any;
+  private motors: any;
+  private interiors: any;
+  private extras: any;
 
-  getFeatures(idModel){
-      return this.http.get('/car_models/features/'+idModel)
+  constructor(private http: HttpClient) { 
+    this.loadData();
   }
-//assing this shit to the model array
+
+  /**
+   * Loads the images path and save it in memory 
+   * to not reload every time it's need it in the builder components
+   */
+  loadData() {
+    this.loadRims().subscribe(res => {
+      this.rims = res;
+    });
+    this.loadMotors().subscribe(res => {
+      this.motors = res;
+    });
+    this.loadInteriors().subscribe(res => {
+      this.interiors = res;
+    });
+    this.loadExtras().subscribe(res => {
+      this.extras = res;
+    });
+  }
+
+  getRims() {
+    return this.rims;
+  }
+  getMotors() {
+    return this.motors;
+  }
+  getInteriors() {
+    return this.interiors;
+  }
+  getExtras() {
+    return this.extras;
+  }
+  
+
   getModelImages(){
     return this.http.get('/model_models')
   }
   getModels(){
     return this.http.get('/car_models')
   }
-  getRims(){
-    return this.http.get('/rimsPaths')
+
+  loadMotors(){
+    return this.http.get('/motor_Paths')
   }
-  getMotors(){
-    return this.http.get('/motorPaths')
+  loadRims(){
+    return this.http.get('/rims_paths')
   }
-  getInteriors(){
-    return this.http.get('/interiorPaths')
+  loadInteriors(){
+    return this.http.get('/interior_paths')
   }
-  selectModel(idModel:number){
-   return this.model
+  loadExtras(){
+    return this.http.get('/extras_paths')
   }
- 
+
+  getModel(modelName){
+    return this.http.get('/car_models/models/' + modelName)
+  }
   
 }

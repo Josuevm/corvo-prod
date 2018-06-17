@@ -1,0 +1,61 @@
+.RimsPicker {
+    position: absolute;
+    bottom: 2vh;
+    left: 0vw;
+    height: 12vh;
+    /* width: 0; */
+    margin-left: 11%;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 1503px) {
+    .RimsPicker {
+        position: absolute;
+        margin-left: 0;
+    bottom: 2vh;
+    /* left: 0vw; */
+    height: 12vh;
+    /* width: 0; */
+    /* margin-left: 11%; */
+    -ms-flex-line-pack: center;
+    align-content: center;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    background: rgba(0, 0, 0, 0.5);
+    }
+}
+.Rim{
+    position: relative;
+    height: 11vh;
+    width: 12%;
+    margin-right: 5vw;
+    padding: 1%;
+    padding-top: 1%;
+    margin-top: 1vh;
+    cursor: pointer;
+    text-align: center;
+}
+
+.rimsIcon {
+    width: 100%;
+    height: 100%;
+}
+
+.active {
+    border: solid 2px gold;
+}
+
+.rimDescription{
+    font-family: 'Rajdhani', sans-serif;
+    color: #cb9f3d;
+    text-align: center;
+    padding-top: 3vh;
+    font-size: 350%;
+    text-transform: uppercase;
+}

@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 
 var InteriorSchema = new mongoose.Schema({
+    ID : String,
     name : String,
-    description : String,
-    image: String,
-    features: []
+    path: String,
+    price: String
 });
 
 

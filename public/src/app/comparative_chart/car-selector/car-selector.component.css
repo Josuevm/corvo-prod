@@ -1,0 +1,91 @@
+.model-container{
+    border: 4px solid rgb(10, 10, 10);
+    text-align: center;
+    cursor: move;
+    text-transform: uppercase;
+}
+
+h1,h2,h3,h4,h5{
+    font-family: 'Rajdhani', sans-serif;
+    margin: auto;
+}
+
+.model-image{
+    width: 100%;
+}
+
+.dragged{
+    -webkit-filter: grayscale(1);
+    filter: grayscale(100%);
+    cursor: not-allowed !important;
+}
+
+.dragged>.model-container>.model-title>h3{
+    color: rgb(184, 184, 184);
+    cursor: not-allowed !important;
+}
+
+.dragged>.model-container>.model-title>{
+    cursor: not-allowed !important;
+}
+
+.dragged>.model-container{
+    border: 4px solid rgb(184, 184, 184);
+}
+
+.dragged>.model-container>.model-image>img{
+    cursor: not-allowed !important;
+}
+
+.model-image>img{
+    max-height:100%; 
+    max-width:100%;
+    cursor: move !important;
+}
+
+.dropable-container{
+    border: 2px solid rgb(93, 93, 93);
+    text-align: center;
+    border-style: dashed;
+    color:rgb(93, 93, 93);
+    text-transform: uppercase;
+}
+
+.drop-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.model-image-dropped{
+    width: 100%;
+}
+
+.model-image-dropped>img{
+    max-height:100%; 
+    max-width:100%;
+}
+
+.model-container-dropped{
+    text-align: center;
+    cursor:default;
+}
+
+.fa{
+    cursor:pointer;
+}
+
+.model-container.dragged{
+    cursor:not-allowed;
+}
+
+.top-bufferM {
+    margin-top: 80px;
+}
+
+@media screen and (max-width: 1024px) {
+    .dropable-container {
+      visibility: hidden;
+    }
+  }

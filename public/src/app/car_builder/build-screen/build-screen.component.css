@@ -2,101 +2,45 @@
     height: 90vh;
 }
 
-.car {
-    align-content: center;
-}
 
-
-.bodyImage{
-
-  position: absolute;
-  background-size: 100%;
-    width: 80vw;
-    height: 60vh;
-    margin-top: 18%;
-    -webkit-filter: opacity(.5) drop-shadow(0 0 0 white);  filter: opacity(.5) drop-shadow(0 0 0 white);
-
-}
-
-
-.extraImage{
-  
-  position: absolute;
-  background-size: 100%;
-    width: 80vw;
-    height: 60vh;
-    margin-top: 18%;
-}
-
-.rimsImage{
-
-  position: absolute;
-  background-size: 100%;
-    width: 80vw;
-    height: 60vh;
-    margin-top: 18%;
-}
-
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1024px) {
     .buildScreen {
       height: 52vh;
     }
-
-    .bodyImage{
-      background: url('../../../assets/images/Imperiale/Imperiale-1.png') no-repeat center center;
-      -webkit-filter: opacity(.5) drop-shadow(0 0 0 white);  filter: opacity(.5) drop-shadow(0 0 0 white);
-      position: absolute;
-      background-size: 100%;
-        width: 80vw;
-        height: 60vh;
-        margin-top: 5%;
-    }
-    
-    .extraImage{
-      background: url('../../../assets/images/Imperiale/Imperiale-2.png') no-repeat center center;
-      position: absolute;
-      background-size: 100%;
-        width: 80vw;
-        height: 60vh;
-        margin-top: 5%;
-    }
-    
-    .rimsImage{
-      background: url('../../../assets/images/Imperiale/Imperiale-3.png') no-repeat center center;
-      position: absolute;
-      background-size: 100%;
-        width: 80vw;
-        height: 60vh;
-        margin-top: 5%;
-    }
   
 }
 
-.button {
-    position: absolute;
-    bottom: 5vh;
-    right: 2vw;
-    border: 3px solid white;
-    font-family: 'Rajdhani', sans-serif;
-  }
+
+a {
+  text-decoration: none;
+
+}
+
 
 .box {
-  margin: 1vh;
-  padding: 3vh;
-  height: 7vh;
-  width: 15vw;
+    font-size: 2vw;
+    font-family: 'Rajdhani', sans-serif;
+ margin-top: 2em;
+  position:relative;
+  vertical-align: middle;
   color: #FFF;
+  display: inline-block;
+  
+  line-height: 60px;
   text-align: center;
-  align-content: center;
   transition: 0.5s;
+  padding: 0.7em;
   cursor: pointer;
+  border: 2px solid #FFF;
   -webkit-transition:0.5s;
+  background: linear-gradient(-45deg, rgba(255,255,255,.2) 60%, rgba(255,255,255,.05) 60%, rgba(255,255,255,.05) 80%, rgba(0,0,0,.1) 80%);
+
 }
 
 .box:hover {
   border: 2px solid rgba(0,160,80,0);
   color: #FFF;
-  background: radial-gradient( rgba(255,255,255, 0.5), rgba(255,255,255, 0.2), rgba(255,255,255, 0));
+  
 }
 
 .box::before, .box::after {
@@ -110,7 +54,7 @@
   box-sizing: border-box;
   -webkit-transform: scale(0);
   transform: scale(0);
-  transition: 0.35s;
+  transition: 0.5s;
 }
 
 .foo::before {

@@ -1,8 +1,10 @@
 var mongoose = require('mongoose');
 
 var MotorSchema = new mongoose.Schema({
-    motorId : Number,
-    path:String
+    ID : String,
+    name : String,
+    path: String,
+    price: String
 });
 
 module.exports = mongoose.model('Motor_paths', MotorSchema);

@@ -5,6 +5,11 @@ import {
   SafeUrl,
   SafeStyle
 } from '@angular/platform-browser';
+import { SelectedCarService } from '../../selected-car.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { PreviewModalComponent } from '../../preview-modal/preview-modal.component';
+import { CarDataService } from '../../car-data.service';
+import { ColorPickerComponent } from '../color-picker/color-picker.component';
 
 @Component({
   selector: 'build-screen',
@@ -14,66 +19,54 @@ import {
 export class BuildScreenComponent implements OnInit {
 
   @Input('buildOption') buildOption;
-  @Input('model') model;
 
-  car = {
-    modelID: 0,
-    colorID: ''
-  };
+  specs: any;
 
-  
+  bsModalRef: BsModalRef;
 
-  //esto despues se cambia ya con la logica de las images desde la base 
-  carsImages = [
-    [
-      "../../../assets/images/Imparatus/SUV-1.png",
-      "../../../assets/images/Imparatus/SUV-2.png",
-      "../../../assets/images/Imparatus/SUV-3.png"
-    ]
-    ,
-    [
-      "../../../assets/images/Kubanyi/RAM-1.png",
-      "../../../assets/images/Kubanyi/RAM-2.png",
-      "../../../assets/images/Kubanyi/RAM-3.png"
-    ]
-    ,
-    [
-      "../../../assets/images/Imperiale/Imperiale-1.png",
-      "../../../assets/images/Imperiale/Imperiale-2.png",
-      "../../../assets/images/Imperiale/Imperiale-3.png"
-    ]
-  ]
-    ;
+  rimPath: any;
 
-
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor(private sanitizer: DomSanitizer,
+    private selectedCarSrv: SelectedCarService,
+    private modalService: BsModalService) { }
 
   ngOnInit() {
+    this.selectedCarSrv.specs.subscribe(res => this.specs = res);
+    this.specs = { //cambiar estp
+      ...this.specs,
+      rimsID: 1
+    }
+    this.selectedCarSrv.changeSpecs(this.specs);
   }
 
-  ngOnChanges(){
-   //cambia el id, de una vez en cadena se cambia lo grafico
-    this.car.modelID = this.model;
-  }
-
-  //recibe el tipo de imagen que se ocupa, se encarga de devolverla la parte adecuada del carro seleccionado 
-  getBackground(part) {
-    return this.carsImages[this.car.modelID][part];
+  ngOnChanges() {
+    //cambia el id, de una vez en cadena se cambia lo grafico
+    // this.specs = { //cambiar esto
+    //   ...this.specs,
+    //   modelID: this.model
+    // }
+    // this.selectedCarSrv.changeSpecs(this.specs);
   }
 
   showPreview() {
-    this.car.modelID = this.model;
-    alert('modelID: ' + this.car.modelID + ' colorID: ' + this.car.colorID);
+    this.bsModalRef = this.modalService.show(PreviewModalComponent,{class: 'modal-preview'});
   }
 
   setColor(color) {
-    this.car.colorID = color;
-    this.changeCarColor();
+    let data ={ID: color.ID, name: color.name};
+    this.specs = {
+      ...this.specs,
+      color: data
+    }
+    this.selectedCarSrv.changeSpecs(this.specs);
   }
 
-  changeCarColor() {
-    //images logic goes HERE
+  setRims(rims) {
+    this.specs = {
+      ...this.specs,
+      rims: rims,
+    }
+    this.selectedCarSrv.changeSpecs(this.specs);
   }
-
 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CarDataService } from '../car-data.service';
 import { SelectedCarService } from '../selected-car.service';
 
@@ -23,7 +22,7 @@ export class ModelsComponent implements OnInit {
       this.models = res;
       this.selectedModelName = this.models[1].name;
       this.modelChanged.emit(this.selectedModelName);
-      this.selectedCarSrv.getDefaultData(this.selectedModelName);
+      this.setSelectedModel(this.selectedModel);
     });
   }
 

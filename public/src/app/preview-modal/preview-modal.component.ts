@@ -1,6 +1,9 @@
 import { Component, OnInit, Output, ViewChild,ViewEncapsulation} from '@angular/core';
 import { BsModalRef, BsModalService, ModalDirective } from 'ngx-bootstrap/modal';
-import { SelectedCarService } from '../selected-car.service'
+import { SelectedCarService } from '../selected-car.service';
+import * as jsPDF from 'jspdf';
+import * as html2canvas from 'html2canvas';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-preview-modal',
@@ -13,10 +16,13 @@ export class PreviewModalComponent implements OnInit {
   bsModalRef: BsModalRef;
   subT = 0;
   specs : any;
+  generatingPDF: boolean = false;
 
   details =[]
 
-  constructor(private modalService: BsModalService, private selectedCarSrv: SelectedCarService) { }
+  constructor(private modalService: BsModalService, 
+    private selectedCarSrv: SelectedCarService,
+    private router: Router) { }
 
 
   ngOnInit() {
@@ -83,13 +89,27 @@ getExtraP1(){
   }
   return subT
 }
-  hideModal(){ //not working
-   
-  }
+
+
   calculateTotal(){ 
     this.getExtraP()
     this.subT+=parseInt(this.specs.motor.price) +parseInt(this.specs.inside.price)+parseInt(this.specs.rims.price);
     
+  }
+
+  downloadPDF() {
+    let element = document.getElementById("PDFcontent");
+    element.style.backgroundColor = 'white';
+    element.style.color = 'black';
+    let pdf = new jsPDF();
+    html2canvas(element).then(function(canvas) {
+        element.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+        element.style.color = 'white';
+        // Export the canvas to its data URI representation
+        let base64image = canvas.toDataURL();
+        pdf.addImage(base64image, 45, 10, 110, 90);
+        pdf.save('CorvoCar.pdf');
+    });
   }
 
 

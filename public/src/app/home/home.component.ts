@@ -24,4 +24,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  getVideoTag() {
+    return `<video autoplay loop muted width="100%" height="100%" >
+    <source src="../../assets/videos/imperiale.webm" type="video/webm" />
+  </video>`;
+  }
+
+
+
 }

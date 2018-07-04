@@ -509,7 +509,7 @@ var BuilderComponent = /** @class */ (function () {
 /***/ "./src/app/car_builder/car/car.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".car {\r\n    -ms-flex-line-pack: center;\r\n        align-content: center;\r\n}\r\n\r\n.baseImage{\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\r\n  position: absolute;\r\n  background-size: 100%;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin-top: 18%;\r\n}\r\n\r\n.bodyImage{\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\r\n  position: absolute;\r\n  background-size: 100%;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin-top: 18%;\r\n    -webkit-filter: opacity(.5) drop-shadow(0 0 0 white);  filter: opacity(.5) drop-shadow(0 0 0 white);\r\n}\r\n\r\n.extraImage{\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\r\n  position: absolute;\r\n  background-size: 100%;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin-top: 18%;\r\n}\r\n\r\n.rimsImage{\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\r\n  position: absolute;\r\n  background-size: 100%;\r\n    width: 80vw;\r\n    height: 60vh;\r\n    margin-top: 18%;\r\n}\r\n\r\n@media only screen and (max-width: 992px) {\r\n    .bodyImage{\r\n      -webkit-filter: opacity(.5) drop-shadow(0 0 0 white);  filter: opacity(.5) drop-shadow(0 0 0 white);\r\n      position: absolute;\r\n      background-size: 100%;\r\n        width: 80vw;\r\n        height: 60vh;\r\n        margin-top: 5%;\r\n    }\r\n\r\n    .baseImage{\r\n      position: absolute;\r\n      background-size: 100%;\r\n        width: 80vw;\r\n        height: 60vh;\r\n        margin-top: 5%;\r\n    }\r\n    \r\n    .extraImage{\r\n\r\n      position: absolute;\r\n      background-size: 100%;\r\n        width: 80vw;\r\n        height: 60vh;\r\n        margin-top: 5%;\r\n    }\r\n    \r\n    .rimsImage{\r\n\r\n      position: absolute;\r\n      background-size: 100%;\r\n        width: 80vw;\r\n        height: 60vh;\r\n        margin-top: 5%;\r\n    }\r\n  \r\n}"
+module.exports = ".car {\r\n    -ms-flex-line-pack: center;\r\n        align-content: center;\r\n}\r\n\r\n.baseImage{\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\r\n  position: absolute;\r\n  background-size: 100%;\r\n    width: 80vw;\r\n    height: 64vh;\r\n    margin-top: 18%;\r\n}\r\n\r\n.bodyImage{\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\r\n  position: absolute;\r\n  background-size: 100%;\r\n    width: 80vw;\r\n    height: 64vh;\r\n    margin-top: 18%;\r\n    -webkit-filter: opacity(.5) drop-shadow(0 0 0 white);  filter: opacity(.5) drop-shadow(0 0 0 white);\r\n}\r\n\r\n.extraImage{\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\r\n  position: absolute;\r\n  background-size: 100%;\r\n    width: 80vw;\r\n    height: 64vh;\r\n    margin-top: 18%;\r\n}\r\n\r\n.rimsImage{\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\r\n  position: absolute;\r\n  background-size: 100%;\r\n    width: 80vw;\r\n    height: 64vh;\r\n    margin-top: 18%;\r\n}\r\n\r\n@media only screen and (max-width: 1024px) {\r\n    .bodyImage{\r\n      -webkit-filter: opacity(.5) drop-shadow(0 0 0 white);  filter: opacity(.5) drop-shadow(0 0 0 white);\r\n      position: absolute;\r\n      background-size: 100%;\r\n        width: 80vw;\r\n        height: 60vh;\r\n        margin-top: 5%;\r\n    }\r\n\r\n    .baseImage{\r\n      position: absolute;\r\n      background-size: 100%;\r\n        width: 80vw;\r\n        height: 60vh;\r\n        margin-top: 5%;\r\n    }\r\n    \r\n    .extraImage{\r\n\r\n      position: absolute;\r\n      background-size: 100%;\r\n        width: 80vw;\r\n        height: 60vh;\r\n        margin-top: 5%;\r\n    }\r\n    \r\n    .rimsImage{\r\n\r\n      position: absolute;\r\n      background-size: 100%;\r\n        width: 80vw;\r\n        height: 60vh;\r\n        margin-top: 5%;\r\n    }\r\n  \r\n}"
 
 /***/ }),
 
@@ -954,7 +954,7 @@ var GeneralFeaturePickerComponent = /** @class */ (function () {
 /***/ "./src/app/car_builder/rims-picker/rims-picker.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".RimsPicker {\r\n    position: absolute;\r\n    bottom: 2vh;\r\n    left: 0vw;\r\n    height: 12vh;\r\n    /* width: 0; */\r\n    margin-left: 11%;\r\n    -ms-flex-line-pack: center;\r\n    align-content: center;\r\n    display: -webkit-inline-box;\r\n    display: -ms-inline-flexbox;\r\n    display: inline-flex;\r\n    background: rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n@media only screen and (max-width: 1503px) {\r\n    .RimsPicker {\r\n        position: absolute;\r\n        margin-left: 0;\r\n    bottom: 2vh;\r\n    /* left: 0vw; */\r\n    height: 12vh;\r\n    /* width: 0; */\r\n    /* margin-left: 11%; */\r\n    -ms-flex-line-pack: center;\r\n    align-content: center;\r\n    display: -webkit-inline-box;\r\n    display: -ms-inline-flexbox;\r\n    display: inline-flex;\r\n    background: rgba(0, 0, 0, 0.5);\r\n    }\r\n}\r\n\r\n.Rim{\r\n    position: relative;\r\n    height: 11vh;\r\n    width: 12%;\r\n    margin-right: 5vw;\r\n    padding: 1%;\r\n    padding-top: 1%;\r\n    margin-top: 1vh;\r\n    cursor: pointer;\r\n    text-align: center;\r\n}\r\n\r\n.rimsIcon {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.active {\r\n    border: solid 2px gold;\r\n}\r\n\r\n.rimDescription{\r\n    font-family: 'Rajdhani', sans-serif;\r\n    color: #cb9f3d;\r\n    text-align: center;\r\n    padding-top: 3vh;\r\n    font-size: 350%;\r\n    text-transform: uppercase;\r\n}\r\n"
+module.exports = ".RimsPicker {\r\n    position: absolute;\r\n    bottom: 2vh;\r\n    left: 0vw;\r\n    height: 12vh;\r\n    /* width: 0; */\r\n    margin-left: 11%;\r\n    -ms-flex-line-pack: center;\r\n    align-content: center;\r\n    display: -webkit-inline-box;\r\n    display: -ms-inline-flexbox;\r\n    display: inline-flex;\r\n    background: rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n@media only screen and (max-width: 1503px) {\r\n    .RimsPicker {\r\n        position: absolute;\r\n        margin-left: 0;\r\n    bottom: 2vh;\r\n    /* left: 0vw; */\r\n    height: 12vh;\r\n    /* width: 0; */\r\n    /* margin-left: 11%; */\r\n    -ms-flex-line-pack: center;\r\n    align-content: center;\r\n    display: -webkit-inline-box;\r\n    display: -ms-inline-flexbox;\r\n    display: inline-flex;\r\n    background: rgba(0, 0, 0, 0.5);\r\n    }\r\n}\r\n\r\n.Rim{\r\n    position: relative;\r\n    height: 11vh;\r\n    width: 12%;\r\n    margin-right: 5vw;\r\n    padding: 1%;\r\n    padding-top: 1%;\r\n    margin-top: 0.4%;\r\n    cursor: pointer;\r\n    text-align: center;\r\n}\r\n\r\n.rimsIcon {\r\n    width: 4vw;\r\n    height: 8vh;\r\n}\r\n\r\n.active {\r\n    border: solid 2px gold;\r\n}\r\n\r\n.rimDescription{\r\n    font-family: 'Rajdhani', sans-serif;\r\n    color: #cb9f3d;\r\n    text-align: center;\r\n    padding-top: 3vh;\r\n    font-size: 350%;\r\n    text-transform: uppercase;\r\n}\r\n"
 
 /***/ }),
 
@@ -1003,12 +1003,24 @@ var RimsPickerComponent = /** @class */ (function () {
         //load images on rims array from carImages
         // this.carData.loadRims().subscribe(res => {
         var data = this.carData.getRims();
+        var modelid = this.carService.getModelID();
+        console.log(modelid);
         for (var _i = 0, data_1 = data; _i < data_1.length; _i++) {
             var dat = data_1[_i];
+            console.log(dat.ram == undefined);
             if (dat.description != undefined) {
-                this.rims[dat.rimId].img = dat.path;
-                this.rims[dat.rimId].name = dat.description;
-                this.rims[dat.rimId].price = dat.price;
+                if (modelid != 0 && dat.ram == undefined) {
+                    this.rims[dat.rimId].img = dat.path;
+                    this.rims[dat.rimId].name = dat.description;
+                    this.rims[dat.rimId].price = dat.price;
+                }
+                else {
+                    if (modelid == 0 && dat.ram != undefined) {
+                        this.rims[dat.rimId].img = dat.path;
+                        this.rims[dat.rimId].name = dat.description;
+                        this.rims[dat.rimId].price = dat.price;
+                    }
+                }
             }
         }
         // });
@@ -1052,7 +1064,7 @@ module.exports = ".model-container{\r\n    border: 4px solid rgb(10, 10, 10);\r\
 /***/ "./src/app/comparative_chart/car-selector-touch/car-selector-touch.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row top-buffer\">\n    <div class=\"col-sm-12\">\n      <div *ngFor=\"let model of models; let i = index\">\n        <div class=\"col-sm-4\">\n          <div class=\"cont model-container\" (click)=\"selectCar(model)\" [class.selected]=\"firstCarName == model.name || secondCarName == model.name\">\n            <div class=\"model-title\" >\n              <h3>{{model.name}}</h3>\n            </div>\n            <div class=\"model-image\">\n              <img src=\"{{model.image}}\" alt=\"\">\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"container-fluid\">\n\n\n  <div class=\"row top-buffer-m\">\n      <div class=\"col-sm-3\">\n          <div>\n              <div class=\"dropable-body\">\n                  <div *ngIf=\"validateSelect('1')\">\n                      <div class=\"model-container-dropped\">\n                          <div class=\"model-title\">\n                              <h3>{{firstData.name}} \n                                  <i class=\"fa fa-times\" aria-hidden=\"true\" (click)=\"deleteFirstData()\"></i>\n                                </h3>\n                          </div>\n                          <div class=\"model-image-dropped\">\n                              <img src=\"{{firstData.image}}\" alt=\"\">\n                          </div>\n                        </div>\n                  </div>\n              </div>\n          </div>\n      </div>\n    <div class=\"col-sm-6\">\n      <app-comparative-details [cars]=\"cars\"></app-comparative-details>\n    </div>\n    <div class=\"col-sm-3\">\n        <div>\n            <div class=\"dropable-body\">\n                <div *ngIf=\"validateSelect('2')\">\n                    <div class=\"model-container-dropped\">\n                        <div class=\"model-title\">\n                            <h3>{{secondData.name}} \n                                <i class=\"fa fa-times\" aria-hidden=\"true\" (click)=\"deleteSecondData()\"></i>\n                              </h3>\n                        </div>\n                        <div class=\"model-image-dropped\">\n                            <img src=\"{{secondData.image}}\" alt=\"\">\n                        </div>\n                      </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container\">\r\n  <div class=\"row top-buffer\">\r\n    <div class=\"col-sm-12\">\r\n      <div *ngFor=\"let model of models; let i = index\">\r\n        <div class=\"col-sm-4\">\r\n          <div class=\"cont model-container\" (click)=\"selectCar(model)\" [class.selected]=\"firstCarName == model.name || secondCarName == model.name\">\r\n            <div class=\"model-title\" >\r\n              <h3>{{model.name}}</h3>\r\n            </div>\r\n            <div class=\"model-image\">\r\n              <img src=\"{{model.image}}\" alt=\"\">\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"container-fluid\">\r\n\r\n\r\n  <div class=\"row top-buffer-m\">\r\n      <div class=\"col-sm-3\">\r\n          <div>\r\n              <div class=\"dropable-body\">\r\n                  <div *ngIf=\"validateSelect('1')\">\r\n                      <div class=\"model-container-dropped\">\r\n                          <div class=\"model-title\">\r\n                              <h3>{{firstData.name}} \r\n                                  <i class=\"fa fa-times\" aria-hidden=\"true\" (click)=\"deleteFirstData()\"></i>\r\n                                </h3>\r\n                          </div>\r\n                          <div class=\"model-image-dropped\">\r\n                              <img src=\"{{firstData.image}}\" alt=\"\">\r\n                          </div>\r\n                        </div>\r\n                  </div>\r\n              </div>\r\n          </div>\r\n      </div>\r\n    <div class=\"col-sm-6\">\r\n      <app-comparative-details [cars]=\"cars\"></app-comparative-details>\r\n    </div>\r\n    <div class=\"col-sm-3\">\r\n        <div>\r\n            <div class=\"dropable-body\">\r\n                <div *ngIf=\"validateSelect('2')\">\r\n                    <div class=\"model-container-dropped\">\r\n                        <div class=\"model-title\">\r\n                            <h3>{{secondData.name}} \r\n                                <i class=\"fa fa-times\" aria-hidden=\"true\" (click)=\"deleteSecondData()\"></i>\r\n                              </h3>\r\n                        </div>\r\n                        <div class=\"model-image-dropped\">\r\n                            <img src=\"{{secondData.image}}\" alt=\"\">\r\n                        </div>\r\n                      </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -2129,14 +2141,14 @@ var PdfPreviewComponent = /** @class */ (function () {
 /***/ "./src/app/preview-modal/preview-modal.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".material-icons{font-size:3em}\r\n.blockquote-box{border-right:5px solid #E6E6E6;margin-bottom:25px}\r\n.blockquote-box .square{\r\n    min-height:50px;\r\n    margin-right:15px;\r\n    text-align:center!important;\r\n    background-color:#E6E6E6;\r\n}\r\n.blockquote-box.blockquote-primary{border-color: #cb9f3d;}\r\n.blockquote-box.blockquote-primary .square{background-color:#FFF;color:#333}\r\n.modal-header{\r\n   border-bottom:  3px solid #cb9f3d;\r\n}\r\n#x {\r\n  color: #FFF;\r\n}\r\n.close {\r\n  color: #FFF;\r\n}\r\n.car.preview{\r\n padding: 0%;\r\n margin: 0%;\r\n}\r\n.modal-content{\r\n    text-transform: uppercase;\r\n    font-family: 'Rajdhani', sans-serif;\r\n    background-color: rgba(0, 0, 0, 0.9);\r\n    font-size: 1vw;\r\n    color: white;\r\n    border-radius: 0px; \r\n    margin-top: 23%;\r\n}\r\n.modalpdf{\r\n  background-color:white;\r\n  color: black;\r\n}\r\n.modal-footer{\r\n    border-top: 0px;\r\n    text-align: left;\r\n}\r\na {\r\n    text-decoration: none;\r\n  \r\n  }\r\n.pdf.box {\r\n    font-size: 1.6vw;\r\n    font-family: 'Rajdhani', sans-serif;\r\n    /* margin-top: 2em; */\r\n    position: relative;\r\n    vertical-align: middle;\r\n    color: #FFF;\r\n    display: inline-block;\r\n    /* line-height: 60px; */\r\n    text-align: center;\r\n    transition: 0.5s;\r\n    /* padding: 0.7em; */\r\n    cursor: pointer;\r\n    border: 2px solid #FFF;\r\n    -webkit-transition: 0.5s;\r\n  }\r\n.pdf.box:hover {\r\n    border: 2px solid rgba(0,160,80,0);\r\n    color: #FFF;\r\n  }\r\n.pdf.box::before, .box::after {\r\n    width: 100%;\r\n    height:100%;\r\n    z-index: 3;\r\n    content:'';\r\n    position: absolute;\r\n    top:0;\r\n    left:0;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    -webkit-transform: scale(0);\r\n    transform: scale(0);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n  }\r\n.pdf.foo::before {\r\n    border-bottom: 3px solid #cb9f3d;\r\n    border-left: 3px solid #cb9f3d;\r\n    -webkit-transform-origin: 0 100%;\r\n    transform-origin: 0 100%;\r\n  }\r\n.pdf.foo::after {\r\n    border-top: 3px solid #cb9f3d;\r\n    border-right: 3px solid #cb9f3d;\r\n    -webkit-transform-origin: 100% 0%;\r\n    transform-origin: 100% 0%;\r\n  }\r\n.pdf.box:hover::after, .box:hover::before {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n  }\r\n.snip1404 .plan-price {\r\n    font-weight: 600;\r\n    font-size: 3em;\r\n    color:#cb9f3d;\r\n  }"
+module.exports = ".material-icons{font-size:3em}\r\n.blockquote-box{border-right:2px solid #E6E6E6;margin-bottom:25px}\r\n.blockquote-box .square{\r\n    min-height:50px;\r\n    margin-right:15px;\r\n    text-align:center!important;\r\n    background-color:#E6E6E6;\r\n}\r\n.blockquote-box.blockquote-primary{border-color: #cb9f3d;}\r\n.blockquote-box.blockquote-primary .square{    background-color: black;\r\n  color: #cb9f3d;}\r\n.modal-backdrop.in {\r\n    opacity: 0.9;\r\n}\r\n.modal-header{\r\n   border-bottom:  2px solid #cb9f3d;\r\n}\r\n#x {\r\n  color: #cb9f3d;\r\n}\r\n.close {\r\n  color: #cb9f3d;\r\n}\r\n.car.preview{\r\n padding: 0%;\r\n margin: 0%;\r\n}\r\n.carPreview .baseImage{\r\n  margin-top: 50%;\r\n  width: 65vw;\r\n}\r\n.carPreview .bodyImage{\r\n  margin-top: 50%;\r\n  width: 65vw;\r\n}\r\n.carPreview .extraImage{\r\n  margin-top: 50%;\r\n  width: 65vw;\r\n}\r\n.carPreview .rimsImage{\r\n  margin-top: 50%;\r\n  width: 65vw;\r\n}\r\n.modal-content{\r\n    text-transform: uppercase;\r\n    font-family: 'Rajdhani', sans-serif;\r\n    background-color: rgba(0, 0, 0, 0.9);\r\n    font-size: 1vw;\r\n    color: white;\r\n    border-radius: 0px; \r\n    margin-top: 23%;\r\n}\r\n.modal-preview{\r\n  margin-left: 22vw;\r\n  margin-top: -3vh;\r\n  width: 32vw;\r\n}\r\n.modalpdf{\r\n  background-color:white;\r\n  color: black;\r\n}\r\n.modal-footer{\r\n    border-top: 0px;\r\n    text-align: left;\r\n}\r\na {\r\n    text-decoration: none;\r\n  \r\n  }\r\n.pdf.box {\r\n    font-size: 1.6vw;\r\n    font-family: 'Rajdhani', sans-serif;\r\n    /* margin-top: 2em; */\r\n    position: relative;\r\n    vertical-align: middle;\r\n    color: #FFF;\r\n    display: inline-block;\r\n    /* line-height: 60px; */\r\n    text-align: center;\r\n    transition: 0.5s;\r\n    /* padding: 0.7em; */\r\n    cursor: pointer;\r\n    border: 2px solid #FFF;\r\n    -webkit-transition: 0.5s;\r\n    background: linear-gradient(-45deg, rgba(255,255,255,.2) 60%, rgba(255,255,255,.05) 60%, rgba(255,255,255,.05) 80%, rgba(0,0,0,.1) 80%);\r\n  }\r\n.pdf.box:hover {\r\n    border: 2px solid rgba(0,160,80,0);\r\n    color: #FFF;\r\n  }\r\n.pdf.box::before, .box::after {\r\n    width: 100%;\r\n    height:100%;\r\n    z-index: 3;\r\n    content:'';\r\n    position: absolute;\r\n    top:0;\r\n    left:0;\r\n    -webkit-box-sizing: border-box;\r\n            box-sizing: border-box;\r\n    -webkit-transform: scale(0);\r\n    transform: scale(0);\r\n    -webkit-transition: 0.5s;\r\n    transition: 0.5s;\r\n  }\r\n.pdf.foo::before {\r\n    border-bottom: 3px solid #cb9f3d;\r\n    border-left: 3px solid #cb9f3d;\r\n    -webkit-transform-origin: 0 100%;\r\n    transform-origin: 0 100%;\r\n  }\r\n.pdf.foo::after {\r\n    border-top: 3px solid #cb9f3d;\r\n    border-right: 3px solid #cb9f3d;\r\n    -webkit-transform-origin: 100% 0%;\r\n    transform-origin: 100% 0%;\r\n  }\r\n.pdf.box:hover::after, .box:hover::before {\r\n    -webkit-transform: scale(1);\r\n    transform: scale(1);\r\n  }\r\n.snip1404 .plan-price {\r\n    font-weight: 600;\r\n    font-size: 3em;\r\n    color:#cb9f3d;\r\n  }"
 
 /***/ }),
 
 /***/ "./src/app/preview-modal/preview-modal.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div  id=\"PDFcontent\">\r\n<div class=\"modal-header\">\r\n  <h2 class=\"modal-title pull-left\">{{specs.name}}</h2>\r\n  <button type=\"button\" class=\"close pull-right\" (click)=\"modalService._hideModal(1)\" aria-label=\"Close\">\r\n    <span aria-hidden=\"true\" id=\"x\">&times;</span>\r\n  </button>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <div id=\"car\">\r\n    <car class=\"car\" ></car>\r\n  </div>\r\n  <div class=\"details\">\r\n    <div class=\"row\">\r\n      <div class=\"col-xs-3\">\r\n        <h3>Details</h3>\r\n      </div>\r\n    </div>\r\n    <div class=\"row\">\r\n      <div *ngFor='let detail of details'>\r\n        <div class=\"col-xs-6 col-md-5\">\r\n          <div class=\"blockquote-box blockquote-primary clearfix\">\r\n            <div class=\"square pull-left\">\r\n              <i class=\"material-icons\">{{detail.icon}}</i>\r\n            </div>\r\n            <h4>\r\n              <b>{{detail.name}}</b>\r\n            </h4>\r\n            <p>{{detail.desc}}</p>\r\n         <p>Price: <span style=\"color:#cb9f3d\">{{detail.price}}</span> </p>\r\n          </div>\r\n       \r\n        </div>\r\n       \r\n      </div>\r\n      <p>Total: <span style=\"color:#cb9f3d\">{{subT}}</span></p>\r\n    </div>\r\n  </div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"modal-footer\">\r\n  <div class='box foo col-sm-4 pdf' (click)=\"downloadPDF()\">\r\n      GET <span style=\"color:#cb9f3d\">PDF</span> \r\n  </div>\r\n</div>"
+module.exports = "<div id=\"car\">\r\n    <car class=\"carPreview\"></car>\r\n  </div>\r\n<div id=\"PDFcontent\">\r\n    \r\n  <div class=\"modal-header\">\r\n    <h2 class=\"modal-title pull-left\">{{specs.name}}</h2>\r\n    <button type=\"button\" class=\"close pull-right\" (click)=\"modalService._hideModal(1)\" aria-label=\"Close\">\r\n      <span aria-hidden=\"true\" id=\"x\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n\r\n    <div class=\"details\">\r\n      <div class=\"row\">\r\n        <div class=\"col-xs-3\">\r\n          <h3>Details</h3>\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <div *ngFor='let detail of details'>\r\n          <div class=\"col-xs-6 col-md-5\">\r\n            <div class=\"blockquote-box blockquote-primary clearfix\">\r\n              <div class=\"square pull-left\">\r\n                <i class=\"material-icons\">{{detail.icon}}</i>\r\n              </div>\r\n              <h4>\r\n                <b>{{detail.name}}</b>\r\n              </h4>\r\n              <p>{{detail.desc}}</p>\r\n              <p>Price:\r\n                <span style=\"color:#cb9f3d\">{{detail.price}} $</span>\r\n              </p>\r\n            </div>\r\n\r\n          </div>\r\n\r\n        </div>\r\n        <p>Total:\r\n          <span style=\"color:#cb9f3d\">{{subT}} $</span>\r\n        </p>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"modal-footer\">\r\n  <div class='box foo col-sm-4 pdf' (click)=\"downloadPDF()\">\r\n    GET\r\n    <span style=\"color:#cb9f3d\">PDF</span>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2150,9 +2162,7 @@ module.exports = "<div  id=\"PDFcontent\">\r\n<div class=\"modal-header\">\r\n  
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__selected_car_service__ = __webpack_require__("./src/app/selected-car.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jspdf__ = __webpack_require__("./node_modules/jspdf/dist/jspdf.min.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jspdf___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jspdf__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_html2canvas__ = __webpack_require__("./node_modules/html2canvas/dist/npm/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_html2canvas___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_html2canvas__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2162,7 +2172,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -2229,6 +2238,7 @@ var PreviewModalComponent = /** @class */ (function () {
         }
     };
     PreviewModalComponent.prototype.getExtraP1 = function () {
+        //Imparatus
         var subT = 0;
         for (var _i = 0, _a = this.specs.extras; _i < _a.length; _i++) {
             var extra = _a[_i];
@@ -2238,21 +2248,22 @@ var PreviewModalComponent = /** @class */ (function () {
     };
     PreviewModalComponent.prototype.calculateTotal = function () {
         this.getExtraP();
+        if (this.selectedCarSrv.getModelID() == 1) {
+            this.subT += 22000;
+            //imperiale
+        }
+        else if (this.selectedCarSrv.getModelID() == 2) {
+            this.subT += 250000;
+        }
+        else {
+            this.subT += 34000;
+        }
         this.subT += parseInt(this.specs.motor.price) + parseInt(this.specs.inside.price) + parseInt(this.specs.rims.price);
     };
     PreviewModalComponent.prototype.downloadPDF = function () {
         var element = document.getElementById("PDFcontent");
-        element.style.backgroundColor = 'white';
-        element.style.color = 'black';
         var pdf = new __WEBPACK_IMPORTED_MODULE_3_jspdf__();
-        __WEBPACK_IMPORTED_MODULE_4_html2canvas__(element).then(function (canvas) {
-            element.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-            element.style.color = 'white';
-            // Export the canvas to its data URI representation
-            var base64image = canvas.toDataURL();
-            pdf.addImage(base64image, 45, 10, 110, 90);
-            pdf.save('CorvoCar.pdf');
-        });
+        pdf.addHTML(element, function () { pdf.save("puta.pdf"); });
     };
     PreviewModalComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -2263,7 +2274,7 @@ var PreviewModalComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ngx_bootstrap_modal__["a" /* BsModalService */],
             __WEBPACK_IMPORTED_MODULE_2__selected_car_service__["a" /* SelectedCarService */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* Router */]])
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]])
     ], PreviewModalComponent);
     return PreviewModalComponent;
 }());
@@ -2312,6 +2323,9 @@ var SelectedCarService = /** @class */ (function () {
     SelectedCarService.prototype.changeSpecs = function (specs) {
         this.carSpecs.next(specs);
         this.specsChanged.emit(specs);
+    };
+    SelectedCarService.prototype.getModelID = function () {
+        return this.car.modelID;
     };
     SelectedCarService.prototype.getFeatures = function (idModel) {
         return this.http.get('/car_models/features/' + idModel);

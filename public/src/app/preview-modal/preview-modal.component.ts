@@ -36,6 +36,7 @@ export class PreviewModalComponent implements OnInit {
 
   }
 
+
   getDetails(){
     
  
@@ -83,33 +84,36 @@ getExtraP(){
 }
 
 getExtraP1(){
+  //Imparatus
   let subT = 0
+
   for(let extra of this.specs.extras){
     subT+=parseInt(extra.price);
   }
+  
   return subT
 }
 
 
   calculateTotal(){ 
     this.getExtraP()
+    if (this.selectedCarSrv.getModelID() == 1) {
+      this.subT+= 22000  
+      //imperiale
+      } else if(this.selectedCarSrv.getModelID() == 2){
+      this.subT += 250000
+      }else{
+      this.subT+=34000
+      }
     this.subT+=parseInt(this.specs.motor.price) +parseInt(this.specs.inside.price)+parseInt(this.specs.rims.price);
     
   }
 
   downloadPDF() {
     let element = document.getElementById("PDFcontent");
-    element.style.backgroundColor = 'white';
-    element.style.color = 'black';
     let pdf = new jsPDF();
-    html2canvas(element).then(function(canvas) {
-        element.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
-        element.style.color = 'white';
-        // Export the canvas to its data URI representation
-        let base64image = canvas.toDataURL();
-        pdf.addImage(base64image, 45, 10, 110, 90);
-        pdf.save('CorvoCar.pdf');
-    });
+    pdf.addHTML(element,()=> {pdf.save("puta.pdf")});
+   
   }
 
 

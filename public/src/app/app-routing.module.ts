@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ComparativeViewComponent } from './comparative_chart/comparative-view/comparative-view.component'
 import { PdfPreviewComponent } from './pdf-preview/pdf-preview.component';
+import { AboutComponent} from './about/about.component';
 const routes: Routes = [
   {
     path: '',
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'pdf_preview',
     component: PdfPreviewComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
 ];
 

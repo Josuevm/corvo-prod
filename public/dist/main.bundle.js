@@ -17,6 +17,64 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/about/about.component.css":
+/***/ (function(module, exports) {
+
+module.exports = "* {\r\n    font-family: 'Rajdhani', sans-serif;\r\n    color: #fff;\r\n}\r\n\r\n.section-title {\r\n    font-family: \"Josefine sans\", \"sans-seriff\";\r\n    border-bottom: 1px solid #cb9f3d;\r\n    text-align: center;\r\n}\r\n\r\n.section-subtitle{\r\n    text-align: center;\r\n    color: #cb9f3d;\r\n}\r\n\r\n.section-subtitle>h1{\r\n    color: #cb9f3d;\r\n}\r\n\r\n.section-subtitle>h2{\r\n    color: #cb9f3d;\r\n}\r\n\r\n.section-text{\r\n    text-align: center;\r\n}\r\n\r\n.section-text>p{\r\n    font-size: 20px;;\r\n}\r\n\r\n.dev-photo{\r\n    position: relative;\r\n    float: left;\r\n    width:  100%;\r\n    height: 275px;\r\n    background-position: 50% 50%;\r\n    background-repeat:   no-repeat;\r\n    background-size:     cover;\r\n    -webkit-filter: grayscale(80%);\r\n            filter: grayscale(80%);\r\n}\r\n\r\n.principal-text{\r\n    margin-bottom: 50px;\r\n}\r\n\r\n.card-container{\r\n    padding-bottom: 15px;\r\n    background-color: rgba(170,170,170,0.1);\r\n    -webkit-box-shadow: 0 4px 8px 5px rgba(0,0,0, 0.6), 0 6px 9px 0 rgba(0,0,0,0.7);\r\n    box-shadow: 0 4px 8px 5px rgba(0,0,0, 0.6), 0 6px 9px 0 rgba(0,0,0,0.7);\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/about/about.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-nav-bar id=\"navbar\"></app-nav-bar>\r\n<div class=\"container\">\r\n  <div class=\"row top-buffer\">\r\n    <div class=\"section-title\">\r\n      <h1>ABOUT CORVO CARS</h1>\r\n    </div>\r\n  </div>\r\n  <div class=\"row top-buffer\">\r\n    <div class=\"col-sm-8 col-sm-offset-2\">\r\n      <div class=\"section-text principal-text\">\r\n        <p> Corvo cars gives to you the satisfaction to drive a personalized luxury vehicle. \r\n          With our three models Corvo Imperiale, Corvo Kubanyi and Corvo Imparatus you have the change to\r\n          choose between diferent types of cars depending on your lifestyle. And this is just the begining \r\n          Corvo Cars continues improving and creating more products to satisfy our customers, that´s the future\r\n          that we want.  \r\n        </p>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n  <div class=\"top-buffer\"></div>\r\n  <div class=\"top-buffer\"></div>\r\n  <div class=\"top-buffer\"></div>\r\n  <div class=\"row top-buffer\">\r\n    <div class=\"col-sm-6 card-container\">\r\n      <div class=\"\">\r\n        <div class=\"row\">\r\n          <div class=\"section-subtitle\">\r\n            <h1>MISSION</h1>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"section-text\">\r\n            <p> \"To manufacture products of top quality in order to satisfy the individual needs of\r\n              all our customers\"\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"row top-buffer\">\r\n    <div class=\"col-sm-6\"></div>\r\n    <div class=\"col-sm-6 card-container\">\r\n      <div class=\"\">\r\n        <div class=\"row\">\r\n          <div class=\"section-subtitle\">\r\n            <h1>VISION</h1>\r\n          </div>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"section-text\">\r\n            <p>Our goals are always focus in giving the best experience to our users, we already know thas\r\n              our cutomers wants original and luxury cars, but what we want is to give them the \r\n              chance to choose between more than 3 models and increase the customization options. \r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"row top-buffer\">\r\n    <div class=\"team-section\">\r\n      <div class=\"section-subtitle\">\r\n        <h1>OUR TEAM</h1>\r\n      </div>\r\n      <div class=\"row top-buffer\">\r\n        <div class=\"row top-buffer\">\r\n\r\n        <div class=\"col-sm-3 col-sm-offset-2 card-container\">\r\n          <div class=\"row\">\r\n            <img class=\"dev-photo\" src=\"../../assets/images/josue-foto.jpg\" alt=\"\">\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"section-subtitle\">\r\n              <h2>DEVELOPER</h2>\r\n            </div>\r\n          </div>\r\n          <div class=\"row\">\r\n            <div class=\"section-text\">\r\n              <h3>Josué Villagra Marín</h3>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"col-sm-3 col-sm-offset-2 card-container\">\r\n            <div class=\"row\">\r\n                <img class=\"dev-photo\" src=\"../../assets/images/denisse-photo.jpg\" alt=\"\">\r\n              </div>\r\n            <div class=\"row\">\r\n              <div class=\"section-subtitle\">\r\n                <h2>DEVELOPER</h2>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"section-text\">\r\n                <h3>Denisse Gonzalez Salas</h3>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n          <div class=\"row top-buffer\">\r\n\r\n          <div class=\"col-sm-3 col-sm-offset-2 card-container\">\r\n              <div class=\"row\">\r\n                  <img class=\"dev-photo\" src=\"../../assets/images/diego-photo.jpg\" alt=\"\">\r\n                </div>\r\n              <div class=\"row\">\r\n                <div class=\"section-subtitle\">\r\n                  <h2>DEVELOPER</h2>\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"section-text\">\r\n                  <h3>Luis Diego Quirós</h3>\r\n                </div>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"col-sm-3 col-sm-offset-2 card-container\">\r\n                <div class=\"row\">\r\n                    <img class=\"dev-photo\" src=\"../../assets/images/chino-foto.jpeg\" alt=\"\">\r\n                  </div>\r\n                <div class=\"row\">\r\n                  <div class=\"section-subtitle\">\r\n                    <h2>DEVELOPER</h2>\r\n                  </div>\r\n                </div>\r\n                <div class=\"row\">\r\n                  <div class=\"section-text\">\r\n                    <h3>Steven Quesada Arguedas</h3>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/about/about.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AboutComponent = /** @class */ (function () {
+    function AboutComponent() {
+    }
+    AboutComponent.prototype.ngOnInit = function () {
+        this.changeNavStyle();
+    };
+    AboutComponent.prototype.changeNavStyle = function () {
+        document.getElementById("navbar").style.background = "#222";
+        document.getElementById("navLink").style.color = "#fff";
+        document.getElementById("navLink2").style.color = "#fff";
+        document.getElementById("navLink3").style.color = "#fff";
+        document.getElementById("navLink4").style.color = "#fff";
+    };
+    AboutComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-about',
+            template: __webpack_require__("./src/app/about/about.component.html"),
+            styles: [__webpack_require__("./src/app/about/about.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], AboutComponent);
+    return AboutComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28,12 +86,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__contact_contact_component__ = __webpack_require__("./src/app/contact/contact.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__comparative_chart_comparative_view_comparative_view_component__ = __webpack_require__("./src/app/comparative_chart/comparative-view/comparative-view.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pdf_preview_pdf_preview_component__ = __webpack_require__("./src/app/pdf-preview/pdf-preview.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -56,6 +116,10 @@ var routes = [
     {
         path: 'pdf_preview',
         component: __WEBPACK_IMPORTED_MODULE_5__pdf_preview_pdf_preview_component__["a" /* PdfPreviewComponent */]
+    },
+    {
+        path: 'about',
+        component: __WEBPACK_IMPORTED_MODULE_6__about_about_component__["a" /* AboutComponent */]
     },
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -156,12 +220,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__comparative_chart_comparative_details_comparative_details_component__ = __webpack_require__("./src/app/comparative_chart/comparative-details/comparative-details.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pdf_preview_pdf_preview_component__ = __webpack_require__("./src/app/pdf-preview/pdf-preview.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__comparative_chart_car_selector_touch_car_selector_touch_component__ = __webpack_require__("./src/app/comparative_chart/car-selector-touch/car-selector-touch.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__about_about_component__ = __webpack_require__("./src/app/about/about.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -220,7 +286,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_28__comparative_chart_comparative_view_comparative_view_component__["a" /* ComparativeViewComponent */],
                 __WEBPACK_IMPORTED_MODULE_29__comparative_chart_comparative_details_comparative_details_component__["a" /* ComparativeDetailsComponent */],
                 __WEBPACK_IMPORTED_MODULE_30__pdf_preview_pdf_preview_component__["a" /* PdfPreviewComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__comparative_chart_car_selector_touch_car_selector_touch_component__["a" /* CarSelectorTouchComponent */]
+                __WEBPACK_IMPORTED_MODULE_31__comparative_chart_car_selector_touch_car_selector_touch_component__["a" /* CarSelectorTouchComponent */],
+                __WEBPACK_IMPORTED_MODULE_32__about_about_component__["a" /* AboutComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_14_ng4_twitter_timeline_lib_index__["b" /* Ng4TwitterTimelineModule */],
@@ -1460,6 +1527,7 @@ var ComparativeViewComponent = /** @class */ (function () {
         document.getElementById("navLink").style.color = "#fff";
         document.getElementById("navLink2").style.color = "#fff";
         document.getElementById("navLink3").style.color = "#fff";
+        document.getElementById("navLink4").style.color = "#fff";
     };
     ComparativeViewComponent.prototype.isDraggable = function () {
         var screenWidth = window.innerWidth;
@@ -1606,6 +1674,7 @@ var ContactComponent = /** @class */ (function () {
         document.getElementById("navLink").style.color = "#fff";
         document.getElementById("navLink2").style.color = "#fff";
         document.getElementById("navLink3").style.color = "#fff";
+        document.getElementById("navLink4").style.color = "#fff";
     };
     ContactComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -1625,14 +1694,14 @@ var ContactComponent = /** @class */ (function () {
 /***/ "./src/app/footer/footer.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "\r\nfooter{\r\n    /* background: #37474F; */\r\n    color: white;\r\n    /* background-image: url(\"https://www.lamborghini.com/themes/custom/lambo/img/base/bg-footer.jpg\");\r\n    background-size: 100%; */\r\n    /* background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.1),rgba(203,159,61,0.3),#cb9f3d); */\r\n    border-top: 1px solid #cb9f3d;\r\n    background: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.5)),color-stop(rgba(0,0,0,0.8)),to(black));\r\n    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8),black);\r\n    }\r\n\r\n    .top-buffer {\r\n        margin-top: 0px;\r\n    }\r\n\r\n    a{\r\n       \r\n     color:white;\r\n     text-decoration:none\r\n    \r\n    }\r\n\r\n    hr{\r\n      display: block;\r\n        height: 1px;\r\n        border: 0;\r\n        border-top: 1px solid #ccc;\r\n        margin: 1em 0;\r\n        padding: 0; \r\n    }\r\n\r\n    i.fa.fa-facebook, i.fa.fa-twitter, i.fa.fa-instagram{\r\n     border-radius: 100%;\r\n     font-size: 28px;\r\n     height: 40px;\r\n     line-height: 40px;\r\n     margin: 5px;\r\n     text-align: center;\r\n     width: 40px;\r\n     }\r\n\r\n    i.fa.fa-facebook{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-twitter{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-instagram{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-facebook, i.fa.fa-twitter, i.fa.fa-instagram,i.fa.fa-pinterest,i.fa.fa-linkedin,i.fa.fa-google-plus,i.fa.fa-github{\r\n     border-radius: 100%;\r\n     font-size: 28px;\r\n     height: 38px;\r\n     line-height: 40px;\r\n     margin: 5px;\r\n     text-align: center;\r\n     width: 38px;\r\n     }\r\n\r\n    i.fa.fa-github{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-google-plus{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-pinterest{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-linkedin{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    .social-icons .fa:hover, .social-icons .fa:active {\r\n        color: #FFF;\r\n        -webkit-box-shadow: 1px 1px 3px #333;\r\n        box-shadow: 1px 1px 3px #333; \r\n    }\r\n\r\n    .social-icons.icon-zoom .fa:hover, .social-icons.icon-zoom .fa:active { \r\n         -webkit-transform: scale(1.1);\r\n        transform: scale(1.1); \r\n    }\r\n\r\n    .list-unstyled {\r\n        padding-left: 0;\r\n        list-style: none;\r\n    }\r\n\r\n    .list-inline li {\r\n        display: inline-block;\r\n        padding-right: 0.5px;\r\n        padding-left: 0px;\r\n        margin-bottom: -90px;\r\n    }\r\n\r\n    .copyright {\r\n        padding: 0px;\r\n        text-align: center;\r\n    }\r\n\r\n    .row a:hover{\r\n      color:#787878;\r\n      text-decoration:none\r\n    }\r\n\r\n    .row a:active{\r\n      \r\n      color:#FFFFFF;\r\n      text-decoration:none\r\n    }\r\n\r\n   "
+module.exports = "\r\nfooter{\r\n    /* background: #37474F; */\r\n    color: white;\r\n    /* background-image: url(\"https://www.lamborghini.com/themes/custom/lambo/img/base/bg-footer.jpg\");\r\n    background-size: 100%; */\r\n    /* background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.1),rgba(203,159,61,0.3),#cb9f3d); */\r\n    border-top: 1px solid #cb9f3d;\r\n    background: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.5)),color-stop(rgba(0,0,0,0.8)),to(black));\r\n    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8),black);\r\n    }\r\n\r\n    .top-buffer {\r\n        margin-top: 40px;\r\n    }\r\n\r\n    a{\r\n       \r\n     color:white;\r\n     text-decoration:none\r\n    \r\n    }\r\n\r\n    hr{\r\n      display: block;\r\n        height: 1px;\r\n        border: 0;\r\n        border-top: 1px solid #ccc;\r\n        margin: 1em 0;\r\n        padding: 0; \r\n    }\r\n\r\n    i.fa.fa-facebook, i.fa.fa-twitter, i.fa.fa-instagram{\r\n     border-radius: 100%;\r\n     font-size: 28px;\r\n     height: 40px;\r\n     line-height: 40px;\r\n     margin: 5px;\r\n     text-align: center;\r\n     width: 40px;\r\n     }\r\n\r\n    i.fa.fa-facebook{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-twitter{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-instagram{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-facebook, i.fa.fa-twitter, i.fa.fa-instagram,i.fa.fa-pinterest,i.fa.fa-linkedin,i.fa.fa-google-plus,i.fa.fa-github{\r\n     border-radius: 100%;\r\n     font-size: 28px;\r\n     height: 38px;\r\n     line-height: 40px;\r\n     margin: 5px;\r\n     text-align: center;\r\n     width: 38px;\r\n     }\r\n\r\n    i.fa.fa-github{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-google-plus{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-pinterest{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    i.fa.fa-linkedin{\r\n     border: 1px solid #FFFFFF;\r\n     color: #FFFFFF;\r\n     }\r\n\r\n    .social-icons .fa:hover, .social-icons .fa:active {\r\n        color: #FFF;\r\n        -webkit-box-shadow: 1px 1px 3px #333;\r\n        box-shadow: 1px 1px 3px #333; \r\n    }\r\n\r\n    .social-icons.icon-zoom .fa:hover, .social-icons.icon-zoom .fa:active { \r\n         -webkit-transform: scale(1.1);\r\n        transform: scale(1.1); \r\n    }\r\n\r\n    .list-unstyled {\r\n        padding-left: 0;\r\n        list-style: none;\r\n    }\r\n\r\n    .list-inline li {\r\n        display: inline-block;\r\n        padding-right: 0.5px;\r\n        padding-left: 0px;\r\n        margin-bottom: -90px;\r\n    }\r\n\r\n    .copyright {\r\n        padding: 0px;\r\n        text-align: center;\r\n    }\r\n\r\n    .row a:hover{\r\n      color:#787878;\r\n      text-decoration:none\r\n    }\r\n\r\n    .row a:active{\r\n      \r\n      color:#FFFFFF;\r\n      text-decoration:none\r\n    }\r\n\r\n   "
 
 /***/ }),
 
 /***/ "./src/app/footer/footer.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<!--Footer-->\r\n\r\n<footer class=\"page-footer mdb-color center-on-small-only top-buffer\">\r\n\r\n  <!--Footer Links-->\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n    <div class=\"row\"><br><br></div>\r\n    <div class=\"col-md-1 offset-md-1\"><h4><a href=\"\"></a> </h4></div>\r\n    <!--<hr style='margin-top:-1em'>-->\r\n    <div class=\"col-md-1 offset-md-1\"><h4><a href=\"\"></a></h4></div>\r\n    <div class=\"col-md-1 offset-md-1\"><h4><a href=\"\"></a></h4></div>  \r\n    <div class=\"col-md-1 offset-md-1\"><h4><a href=\"\"></a></h4></div> \r\n    <div class=\"col-md-1 offset-md-1\"><h4><a href=\"\"></a> </h4></div> \r\n    \r\n    </div>\r\n      <div  class=\"row\">\r\n          <!--First column-->\r\n             <div id=\"links1\" class=\"col-md-2 offset-md-4\">\r\n              <h5 class=\"title\">Models </h5>\r\n              <hr style='margin-top:1em'> \r\n              <p>Corvo Imperiale</p>\r\n              <p>Corvo Kubanyi</p>\r\n              <p>Corvo Imparatus</p>\r\n              <ul>\r\n                                    \r\n              </ul>\r\n          </div>\r\n\r\n      \r\n          <!--Third column-->\r\n          <div id=\"links2\" class=\"col-md-2 offset-md-1\">\r\n              <h5 class=\"title\">Navigation</h5>\r\n              <hr style='margin-top:1em'>\r\n              <p><a routerLink=\"\">Models</a></p>\r\n              <p><a  routerLink=\"/comparative_chart\">Compare cars</a></p>\r\n              <p> <a routerLink=\"/contact\">Contact</a></p>\r\n              <ul>\r\n\r\n              </ul>\r\n          </div>\r\n          \r\n          <!--Fourth column-->\r\n         <div id=\"links2\" class=\"col-md-5 offset-md-1\">\r\n      \r\n          <a class=\"twitter-timeline\" href=\"https://twitter.com/Corvus_imperio?ref_src=twsrc%5Etfw\" ata-width=\"800\"\r\n          data-height=\"200\">Tweets by Corvus_imperio</a>\r\n          <ng4-twitter-timeline hidden [dataSrc]=\"{sourceType: 'profile',screenName: 'Corvus_imperio'}\" [opts]=\"{tweetLimit: 2}\">Tweets by Corvus_imperio</ng4-twitter-timeline>\r\n          \r\n        </div>  \r\n      \r\n\r\n          <!--/.Fourth column-->\r\n\r\n      </div>\r\n  </div>\r\n  <!--/.Footer Links-->\r\n\r\n  <!--Call to action-->\r\n\r\n  <!--Social buttons-->\r\n  <div class=\"text-center mb-3\">\r\n     <div class=\"container-fluid\">\r\n    <ul class=\"social-icons icon-circle icon-zoom list-unstyled list-inline\"> \r\n      <li><a href=\"https://www.facebook.com/Corvo-Cars-178109046180834/\"><i class=\"fa fa-facebook\"></i></a> </li> \r\n      <li><a href=\"https://twitter.com/Corvus_imperio\"><i class=\"fa fa-twitter\"></i></a> </li>   \r\n      <li> <a href=\"https://www.instagram.com/corvo_cars/\"><i class=\"fa fa-instagram\"></i></a> </li> \r\n      \r\n    </ul>\r\n        ©2018 Copyright: <a class=\"copyright\" href=\"\"> CorvoCars \r\n         </a>\r\n\r\n      </div>\r\n  </div>\r\n  <div id=\"containerPDF\"></div>\r\n</footer>\r\n<!--/.Footer-->\r\n      "
+module.exports = "\r\n<!--Footer-->\r\n\r\n<footer class=\"page-footer mdb-color center-on-small-only top-buffer\">\r\n\r\n  <!--Footer Links-->\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n    <div class=\"row\"><br><br></div>\r\n    <div class=\"col-md-1 offset-md-1\"><h4><a href=\"\"></a> </h4></div>\r\n    <!--<hr style='margin-top:-1em'>-->\r\n    <div class=\"col-md-1 offset-md-1\"><h4><a href=\"\"></a></h4></div>\r\n    <div class=\"col-md-1 offset-md-1\"><h4><a href=\"\"></a></h4></div>  \r\n    <div class=\"col-md-1 offset-md-1\"><h4><a href=\"\"></a></h4></div> \r\n    <div class=\"col-md-1 offset-md-1\"><h4><a href=\"\"></a> </h4></div> \r\n    \r\n    </div>\r\n      <div  class=\"row\">\r\n          <!--First column-->\r\n             <div id=\"links1\" class=\"col-md-2 offset-md-4\">\r\n              <h5 class=\"title\">Models </h5>\r\n              <hr style='margin-top:1em'> \r\n              <p>Corvo Imperiale</p>\r\n              <p>Corvo Kubanyi</p>\r\n              <p>Corvo Imparatus</p>\r\n              <ul>\r\n                                    \r\n              </ul>\r\n          </div>\r\n\r\n      \r\n          <!--Third column-->\r\n          <div id=\"links2\" class=\"col-md-2 offset-md-1\">\r\n              <h5 class=\"title\">Navigation</h5>\r\n              <hr style='margin-top:1em'>\r\n              <p><a routerLink=\"\">Models</a></p>\r\n              <p><a  routerLink=\"/comparative_chart\">Compare cars</a></p>\r\n              <p> <a routerLink=\"/contact\">Contact</a></p>\r\n              <p> <a routerLink=\"/about\">About Us</a></p>\r\n              <ul>\r\n\r\n              </ul>\r\n          </div>\r\n          \r\n          <!--Fourth column-->\r\n         <div id=\"links2\" class=\"col-md-5 offset-md-1\">\r\n      \r\n          <a class=\"twitter-timeline\" href=\"https://twitter.com/Corvus_imperio?ref_src=twsrc%5Etfw\" ata-width=\"800\"\r\n          data-height=\"200\">Tweets by Corvus_imperio</a>\r\n          <ng4-twitter-timeline hidden [dataSrc]=\"{sourceType: 'profile',screenName: 'Corvus_imperio'}\" [opts]=\"{tweetLimit: 2}\">Tweets by Corvus_imperio</ng4-twitter-timeline>\r\n          \r\n        </div>  \r\n      \r\n\r\n          <!--/.Fourth column-->\r\n\r\n      </div>\r\n  </div>\r\n  <!--/.Footer Links-->\r\n\r\n  <!--Call to action-->\r\n\r\n  <!--Social buttons-->\r\n  <div class=\"text-center mb-3\">\r\n     <div class=\"container-fluid\">\r\n    <ul class=\"social-icons icon-circle icon-zoom list-unstyled list-inline\"> \r\n      <li><a href=\"https://www.facebook.com/Corvo-Cars-178109046180834/\"><i class=\"fa fa-facebook\"></i></a> </li> \r\n      <li><a href=\"https://twitter.com/Corvus_imperio\"><i class=\"fa fa-twitter\"></i></a> </li>   \r\n      <li> <a href=\"https://www.instagram.com/corvo_cars/\"><i class=\"fa fa-instagram\"></i></a> </li> \r\n      \r\n    </ul>\r\n        ©2018 Copyright: <a class=\"copyright\" href=\"\"> CorvoCars \r\n         </a>\r\n\r\n      </div>\r\n  </div>\r\n  <div id=\"containerPDF\"></div>\r\n</footer>\r\n<!--/.Footer-->\r\n      "
 
 /***/ }),
 
@@ -1964,7 +2033,7 @@ module.exports = "\r\n.navbar {\r\n\tmargin-bottom: 0;\r\n\tfont-family: 'Cinzel
 /***/ "./src/app/nav-bar/nav-bar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Top menu -->\r\n<nav class=\"navbar navbar-inverse\" role=\"navigation\" id=\"navbar\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#top-navbar-1\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>  \r\n      </button>\r\n      <a class=\"navbar-brand\" routerLink=\"\">Corvo</a>\r\n    </div>\r\n    <!-- Collect the nav links, forms, and other content for toggling -->\r\n    <div class=\"collapse navbar-collapse\" id=\"top-navbar-1\">\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li class=\"effect-box\">\r\n          <a routerLink=\"\" id=\"navLink\">Models</a>\r\n        </li>\r\n        <li  class=\"effect-box\">\r\n          <a routerLink=\"/comparative_chart\"  id=\"navLink2\">Compare</a>\r\n        </li>\r\n        <li  class=\"effect-box\">\r\n          <a routerLink=\"/contact\"  id=\"navLink3\">Contact</a>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>"
+module.exports = "<!-- Top menu -->\r\n<nav class=\"navbar navbar-inverse\" role=\"navigation\" id=\"navbar\">\r\n  <div class=\"container\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#top-navbar-1\">\r\n        <span class=\"sr-only\">Toggle navigation</span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>  \r\n      </button>\r\n      <a class=\"navbar-brand\" routerLink=\"\">Corvo</a>\r\n    </div>\r\n    <!-- Collect the nav links, forms, and other content for toggling -->\r\n    <div class=\"collapse navbar-collapse\" id=\"top-navbar-1\">\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li class=\"effect-box\">\r\n          <a routerLink=\"\" id=\"navLink\">Models</a>\r\n        </li>\r\n        <li  class=\"effect-box\">\r\n          <a routerLink=\"/comparative_chart\"  id=\"navLink2\">Compare</a>\r\n        </li>\r\n        <li  class=\"effect-box\">\r\n          <a routerLink=\"/contact\"  id=\"navLink3\">Contact</a>\r\n        </li>\r\n        <li  class=\"effect-box\">\r\n          <a routerLink=\"/about\"  id=\"navLink4\">About Us</a>\r\n        </li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>"
 
 /***/ }),
 

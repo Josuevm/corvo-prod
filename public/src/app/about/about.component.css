@@ -1,0 +1,53 @@
+* {
+    font-family: 'Rajdhani', sans-serif;
+    color: #fff;
+}
+
+.section-title {
+    font-family: "Josefine sans", "sans-seriff";
+    border-bottom: 1px solid #cb9f3d;
+    text-align: center;
+}
+
+.section-subtitle{
+    text-align: center;
+    color: #cb9f3d;
+}
+
+.section-subtitle>h1{
+    color: #cb9f3d;
+}
+
+.section-subtitle>h2{
+    color: #cb9f3d;
+}
+
+.section-text{
+    text-align: center;
+}
+
+.section-text>p{
+    font-size: 20px;;
+}
+
+.dev-photo{
+    position: relative;
+    float: left;
+    width:  100%;
+    height: 275px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+    filter: grayscale(80%);
+}
+
+.principal-text{
+    margin-bottom: 50px;
+}
+
+.card-container{
+    padding-bottom: 15px;
+    background-color: rgba(170,170,170,0.1);
+    -webkit-box-shadow: 0 4px 8px 5px rgba(0,0,0, 0.6), 0 6px 9px 0 rgba(0,0,0,0.7);
+    box-shadow: 0 4px 8px 5px rgba(0,0,0, 0.6), 0 6px 9px 0 rgba(0,0,0,0.7);
+}

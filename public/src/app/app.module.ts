@@ -33,6 +33,7 @@ import { ComparativeViewComponent } from './comparative_chart/comparative-view/c
 import { ComparativeDetailsComponent } from './comparative_chart/comparative-details/comparative-details.component';
 import { PdfPreviewComponent } from './pdf-preview/pdf-preview.component'
 import { CarSelectorTouchComponent } from './comparative_chart/car-selector-touch/car-selector-touch.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -58,7 +59,8 @@ import { CarSelectorTouchComponent } from './comparative_chart/car-selector-touc
     ComparativeViewComponent,
     ComparativeDetailsComponent,
     PdfPreviewComponent,
-    CarSelectorTouchComponent
+    CarSelectorTouchComponent,
+    AboutComponent
 
   ],
   imports: [
